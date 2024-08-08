@@ -237,6 +237,8 @@
     height: 90%;
 
     border-radius: 15px;
+
+    transition: 0.3s;
 }
 
 .imagesGalleryMainCaption {

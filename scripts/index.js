@@ -12,27 +12,32 @@ for(let i = 0; i < images.length; i++) {
     img.classList.add("imageGalleryImageSmall");
     img.id = descriptions[i];
 
-
-
     $container.append(`<img src="${images[i]}" alt="${descriptions[i]}" class="imageGalleryImageSmall" id = "${descriptions[i]}">`);
 
     if(i === 0) {
-        let $mainImage = $(".imagesGalleryMainImage");
-        $mainImage.attr("src", images[i]);
-        $mainImage.attr("alt", descriptions[i]);
-        $(".imagesGalleryMainCaption").html(descriptions[i]);
+        changeImage(images[i], descriptions[i], descriptions[i]);
 
         document.getElementById(descriptions[i]).classList.add("active");
     }
 }
 
+function changeImage(src, alt, desc) {
+    document.querySelector(".imagesGalleryMainImage").style.opacity = "0";
+
+    window.setTimeout(function() {
+        document.querySelector(".imagesGalleryMainImage").style.opacity = "1";
+
+        let $mainImage = $(".imagesGalleryMainImage");
+        $mainImage.attr("src", src);
+        $mainImage.attr("alt", alt);
+        $(".imagesGalleryMainCaption").html(desc);
+    }, 250);
+}
+
 let allImgs = document.querySelectorAll(".imageGalleryImageSmall");
 for(let i = 0; i < allImgs.length; i++) {
     allImgs[i].addEventListener("click", function() {
-        let $mainImage = $(".imagesGalleryMainImage");
-        $mainImage.attr("src", this.src);
-        $mainImage.attr("alt", this.alt);
-        $(".imagesGalleryMainCaption").html(this.alt);
+        changeImage(this.src, this.alt, this.id);
 
         for(let ii = 0; ii < allImgs.length; ii++) {
             allImgs[ii].classList.remove("active");
@@ -57,10 +62,7 @@ function nextImage() {
 
     let nextDesc = descriptions[images.indexOf(nextSrc)];
 
-    let $mainImage = $(".imagesGalleryMainImage");
-    $mainImage.attr("src", nextSrc);
-    $mainImage.attr("alt", nextDesc);
-    $(".imagesGalleryMainCaption").html(nextDesc);
+    changeImage(nextSrc, nextDesc, nextDesc);
 
     for(let ii = 0; ii < allImgs.length; ii++) {
         allImgs[ii].classList.remove("active");
@@ -88,10 +90,7 @@ function prevImage() {
 
     let prevDesc = descriptions[images.indexOf(prevSrc)];
 
-    let $mainImage = $(".imagesGalleryMainImage");
-    $mainImage.attr("src", prevSrc);
-    $mainImage.attr("alt", prevDesc);
-    $(".imagesGalleryMainCaption").html(prevDesc);
+    changeImage(prevSrc, prevDesc, prevDesc);
 
     for(let ii = 0; ii < allImgs.length; ii++) {
         allImgs[ii].classList.remove("active");

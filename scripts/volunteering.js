@@ -13,7 +13,7 @@ for(let i = 0; i < chapterKeys.length; i++) {
 
     let listItemA = document.createElement("a");
     listItemA.classList.add("pageSectionContentLink");
-    if(window.location.href.includes("github")) {
+    if(window.location.href.includes("github") || window.location.href.includes("SSS-Website")) {
         listItemA.href = "/SSS-Website/chapters.html#" + chapterKeys[i];
     } else {
         listItemA.href = "/chapters.html#" + chapterKeys[i];
