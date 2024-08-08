@@ -1,4 +1,4 @@
-let images = ["/images/gallery/Mansfield Park Cleanup.png", "/images/gallery/Aaronsen Road Cleanup.png", "/images/gallery/Online AI Discussion Panel.png", "/images/gallery/Sandwich Donation Drive.png", "/images/gallery/Tree Branch Cleanup.png"];
+let images = ["images/gallery/Mansfield Park Cleanup.png", "images/gallery/Aaronsen Road Cleanup.png", "images/gallery/Online AI Discussion Panel.png", "images/gallery/Sandwich Donation Drive.png", "images/gallery/Tree Branch Cleanup.png"];
 let descriptions = ["Mansfield Park Cleanup, New Jersey", "Aaronsen Road Cleanup, New Jersey", "Online AI Discussion Panel", "Sandwich Donation Drive, New Jersey", "Tree Branch Cleanup, New Jersey"];
 
 let $container = $(".imagesGalleryImages");
