@@ -492,6 +492,23 @@
         height: auto;
     }
 
+    /* iPad */
+
+    @media screen and (min-width: 1000px) {
+        .section.images {
+            height: min-content;
+        }
+
+        .imagesGallery {
+            width: 70vw;
+        }
+
+        .imagesGalleryMainImage {
+            height: 80%;
+            width: auto;
+        }
+    }
+
     /* Footer */
 
     .indexFooter {

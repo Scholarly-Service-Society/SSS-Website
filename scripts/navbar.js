@@ -53,12 +53,12 @@ if(innerWidth > 1250) {
 
     document.querySelector(".navBurger").addEventListener("click", function() {
         let navLinksMobile = document.querySelector(".navLinksMobile");
-        if(navLinksMobile.style.display === "none" || navLinksMobile.style.display === "") {
-            navLinksMobile.style.display = "block";
+        if(navLinksMobile.style.display === "none" || navLinksMobile.style.marginLeft == "100vw") {
+            navLinksMobile.style.marginLeft = "0";
 
             this.innerHTML = `<i class="fa-solid fa-xmark"></i>`
         } else {
-            navLinksMobile.style.display = "none";
+            navLinksMobile.style.marginLeft = "100vw";
 
             this.innerHTML = `<i class="fa-solid fa-bars"></i>`
         }

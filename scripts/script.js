@@ -110,20 +110,3 @@ let founders = {
         image: "images/founders/Yusuf Dagli.jpeg"
     },
 }
-
-if(!window.location.href.includes("index") && window.location.href.includes(".html")) {
-    let footer = document.querySelector("footer");
-
-    footer.innerHTML = "";
-
-    let footerLeft = document.createElement("div");
-    footerLeft.classList.add("footerLeft");
-    footerLeft.innerHTML = `<i class="fa-regular fa-copyright"></i> Scholarly Service Society`;
-
-    let footerRight = document.createElement("div");
-    footerRight.classList.add("footerRight");
-    footerRight.textContent = "Website by Ishbir lSingh";
-
-    footer.appendChild(footerLeft);
-    footer.appendChild(footerRight);
-}
