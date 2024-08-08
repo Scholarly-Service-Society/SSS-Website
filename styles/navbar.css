@@ -1,0 +1,210 @@
+nav {
+    display: flex;
+    justify-content: space-between;
+
+    height: 12vh;
+
+    padding: 20px;
+
+    background-color: var(--light);
+}
+
+/* Nav Left */
+
+.navLeft {
+    height: 100%;
+
+    padding-left: 30px;
+
+    display: flex;
+    align-items: center;
+}
+
+.navLogo {
+    height: 80%;
+
+    display: flex;
+
+    text-decoration: none;
+
+    color: var(--vDark);
+}
+
+.navLogoImageContainer {
+    height: 100%;
+
+    display: flex;
+    align-items: center;
+}
+
+.navLogoImage {
+    height: 100%;
+}
+
+.navLogoText {
+    height: 100%;
+
+    padding-left: 10px;
+
+    color: var(--vDark);
+
+    display: flex;
+    flex-direction: column;
+}
+
+.navLogoTextTitle {
+    width: max-content;
+    height: 60%;
+
+    font-size: 22px;
+    font-weight: bold;
+
+    text-align: left;
+
+    display: flex;
+    align-items: center;
+}
+
+.navLogoTextSubtitle {
+    height: 40%;
+
+    font-size: 16px;
+
+    display: flex;
+    align-items: center;
+}
+
+/* Nav Right */
+
+.navRight {
+    height: 100%;
+
+    display: flex;
+    align-items: center;
+
+    padding-right: 30px;
+}
+
+.navLinks {
+    height: 100%;
+
+    display: flex;
+    align-items: center;
+}
+
+.navLink {
+    height: 100%;
+
+    font-size: 18px;
+
+    font-weight: bold;
+
+    margin-left: 20px;
+
+    text-decoration: none;
+
+    color: var(--vDark);
+
+    display: flex;
+    align-items: center;
+}
+
+.navLink.contactLink {
+    height: 80%;
+
+    background-color: var(--mid);
+
+    color: var(--vDark);
+
+    padding: 18px;
+
+    border-radius: 15px;
+}
+
+/* Media Queries */
+
+@media screen and (max-width: 1250px) {
+    nav {
+        padding: 10px;
+
+        height: 10vh;
+    }
+
+    .navLeft {
+        padding-left: 10px;
+    }
+
+    .navLogoImage {
+        height: 75%;
+    }
+
+    .navLogoText {
+        height: calc(75% + 10px);
+    }
+
+    .navLogoTextTitle {
+        font-size: 19px;
+    }
+
+    .navLogoTextSubtitle {
+        font-size: 14px;
+    }
+
+    .navRight {
+        padding-right: 10px;
+    }
+
+    .navBurger {
+        font-size: 24px;
+
+        color: var(--vDark);
+
+        cursor: pointer;
+    }
+
+    .navLinksMobile {
+        display: none;
+
+        width: 100vw;
+
+        background-color: var(--light);
+
+        position: absolute;
+
+        left: 0;
+        top: calc(10vh - 10px);
+    }
+
+    .navLinkMobile {
+        height: min-content;
+        width: 100vw;
+
+        font-size: 18px;
+
+        padding: 10px 25px 10px 10px;
+
+        text-align: end;
+
+        text-decoration: none;
+
+        color: var(--vDark);
+
+        display: flex;
+        align-items: center;
+        justify-content: end;
+    }
+
+    .navLinkMobile.contactLink {
+        background-color: var(--light2);
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .navLogoTextTitle {
+        font-size: 17px;
+    }
+
+    .navLogoTextSubtitle {
+        font-size: 12px;
+    }
+}

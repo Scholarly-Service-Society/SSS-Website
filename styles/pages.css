@@ -1,0 +1,166 @@
+/* Sections */
+
+.pageSection {
+    width: 100vw;
+    height: min-content ;
+
+    padding: 40px 40px 0;
+}
+
+.pageSection.midSection {
+    background-color: var(--midLight);
+
+    padding-bottom: 20px;
+}
+
+.pageSectionTitle {
+    font-size: 40px;
+    font-weight: bold;
+    margin-bottom: 20px;
+
+    color: var(--vDark);
+}
+
+.pageSectionContent {
+    font-size: 20px;
+    margin-bottom: 40px;
+
+    color: var(--dark);
+}
+
+.pageSectionSubtitle {
+    font-size: 30px;
+    font-weight: 400;
+    margin-bottom: 20px;
+
+    color: var(--mDark);
+}
+
+.pageSectionContentText {
+    font-size: 20px;
+    margin-bottom: 20px;
+
+    color: var(--dark);
+}
+
+.pageSectionContentList {
+    font-size: 20px;
+    margin-bottom: 20px;
+    margin-left: 40px;
+
+    color: var(--mDark);
+}
+
+.pageSectionContentListItem {
+    font-size: 20px;
+    margin-bottom: 10px;
+
+    color: var(--dark);
+
+}
+
+.pageSectionContentLink {
+    color: var(--dark);
+}
+
+.pageSectionContentBuffer {
+    margin-left: 0;
+}
+
+.pageSectionContentButtonContainer {
+    margin-top: 40px;
+    margin-left: 20px;
+}
+
+.pageSectionContentButton {
+    width: 200px;
+    height: 50px;
+
+    background-color: var(--mid);
+    color: var(--bg);
+
+    font-size: 18px;
+    font-weight: bold;
+
+    border: none;
+    border-radius: 10px;
+
+    padding: 15px;
+
+    text-decoration: none;
+
+    cursor: pointer;
+
+    transition: background-color 0.5s;
+}
+
+.pageSectionContentButton:hover {
+    background-color: var(--mDark);
+}
+
+/* Media Queries */
+
+@media screen and (max-width: 1250px) {
+    .pageSection {
+        padding: 20px 20px 0;
+    }
+
+    .pageSectionTitle {
+        font-size: 30px;
+    }
+
+    .pageSectionContent {
+        font-size: 18px;
+    }
+
+    .pageSectionSubtitle {
+        font-size: 25px;
+    }
+
+    .pageSectionContentText {
+        font-size: 18px;
+    }
+
+    .pageSectionContentList {
+        font-size: 18px;
+    }
+
+    .pageSectionContentListItem {
+        font-size: 18px;
+    }
+
+    .pageSectionContentButton {
+        font-size: 16px;
+    }
+}
+
+/* Footer */
+
+.footer {
+    background-color: var(--midLight);
+
+    padding: 15px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.lastFooter {
+    background-color: var(--bg);
+}
+
+@media screen and (max-width: 1250px) {
+    .footer {
+        padding: 10px;
+
+        flex-direction: column;
+    }
+
+    .footerLeft {
+        margin-bottom: 10px;
+    }
+}

@@ -1,0 +1,24 @@
+.footer {
+    width: 100vw;
+
+    position: absolute;
+    bottom: 0;
+}
+
+/* Media Queries */
+
+@media screen and (max-width: 1250px) {
+    .pageSectionContentButtonContainer {
+        margin-top: 25px;
+        margin-left: 0;
+
+        display: flex;
+        justify-content: center;
+    }
+
+    .pageSectionContentButton {
+        width: 60%;
+
+        text-align: center;
+    }
+}

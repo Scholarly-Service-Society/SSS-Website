@@ -1,0 +1,85 @@
+.chapterSection1 {
+    margin-bottom: 10px;
+}
+
+.chapters {
+    margin-bottom: 0px;
+}
+
+.chapter {
+    width: 100%;
+    padding: 20px;
+    background-color: var(--light2);
+    margin-bottom: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.chapterTitle {
+    font-size: 30px;
+    font-weight: bold;
+    color: var(--vDark);
+    margin-bottom: 10px;
+}
+
+.chapterSubtitle {
+    font-size: 22px;
+    font-weight: 400;
+    color: var(--mDark);
+    margin-bottom: 10px;
+}
+
+.chapterContent {
+    font-size: 21px;
+    color: var(--dark);
+}
+
+.chapterContentText {
+    font-size: 19px;
+
+    margin-bottom: 20px;
+}
+
+.chapterContentButtonContainer {
+    margin-top: 20px;
+}
+
+.chapterContentButton {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: var(--mid);
+    color: var(--bg);
+    font-size: 16px;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.5s;
+}
+
+.chapterContentButton:hover {
+    background-color: var(--mDark);
+}
+
+/* Media Queries */
+
+@media screen and (max-width: 1250px) {
+    .chapter {
+        padding: 15px;
+    }
+
+    .chapterTitle {
+        font-size: 23px;
+    }
+
+    .chapterSubtitle {
+        font-size: 18px;
+    }
+
+    .chapterContent {
+        font-size: 16px;
+    }
+
+    .chapterContentButton {
+        padding: 8px 16px;
+    }
+}

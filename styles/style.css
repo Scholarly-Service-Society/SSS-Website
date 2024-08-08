@@ -1,0 +1,56 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Noto Serif", serif;
+    font-weight: 400;
+    font-style: normal;
+
+    background-color: var(--bg);
+
+    --bg: #FFFAF1;
+    --logo: #59493C;
+    --dark: #3B271D;
+    --mDark: #393330;
+    --vDark: #271f1d;
+    --mid: #AF734A;
+    --midMid: #d3936a;
+    --midLight: #e1b390;
+    --light: #EFE0BB;
+    --light2: #ece1c9;
+}
+
+.innerLink {
+    color: var(--dark)
+}
+
+/* Scrollbar */
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+
+    border-radius: 15px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #888;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+/* Media Queries */
+
+@media screen and (max-width: 1250px) {
+    body {
+        overflow-x: hidden;
+    }
+}

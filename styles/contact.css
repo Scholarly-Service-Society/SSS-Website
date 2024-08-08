@@ -1,0 +1,61 @@
+.pageSectionTitle {
+    margin-bottom: 10px;
+}
+
+.pageSectionSubtitle {
+    margin-bottom: 10px;
+}
+
+.pageSectionContentList {
+    margin-top: 10px;
+    margin-left: 50px;
+}
+
+.listLink {
+    text-decoration: none;
+
+    font-weight: bold;
+}
+
+/* Media Queries */
+
+@media screen and (max-width: 1250px) {
+    .pageSection {
+        padding: 20px 20px 0;
+    }
+
+    .pageSectionTitle {
+        font-size: 30px;
+    }
+
+    .pageSectionContent {
+        font-size: 18px;
+    }
+
+    .pageSectionSubtitle {
+        font-size: 25px;
+    }
+
+    .pageSectionContentText {
+        font-size: 18px;
+    }
+
+    .pageSectionContentList {
+        font-size: 18px;
+
+        margin-left: 40px;
+    }
+
+    .pageSectionContentBuffer {
+        margin-left: 0;
+    }
+}
+
+@media screen and (min-height: 800px) {
+    .footer {
+        width: 100vw;
+
+        position: absolute;
+        bottom: 0;
+    }
+}
