@@ -21,6 +21,8 @@ body {
     --midLight: #e1b390;
     --light: #EFE0BB;
     --light2: #ece1c9;
+
+    overflow-x: hidden;
 }
 
 .innerLink {
