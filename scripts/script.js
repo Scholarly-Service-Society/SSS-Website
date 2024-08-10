@@ -92,8 +92,8 @@ let projects = {
             image: "images/projects/mansfield/mansfieldProject10.png"
         },
     },
-    hnj : {},
-    luk : {},
+    hnj: {},
+    luk: {},
 }
 
 let founders = {

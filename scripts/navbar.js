@@ -5,7 +5,7 @@ let hrefs = ["chapters.html", "volunteering.html", "founders.html", "projects.ht
 
 $navRight.html("");
 
-if(innerWidth > 1250) {
+if (innerWidth > 1250) {
     let navLinks = document.createElement("div");
     navLinks.classList.add("navLinks");
 
@@ -51,9 +51,9 @@ if(innerWidth > 1250) {
 
     $navRight.append(navLinksMobile);
 
-    document.querySelector(".navBurger").addEventListener("click", function() {
+    document.querySelector(".navBurger").addEventListener("click", function () {
         let navLinksMobile = document.querySelector(".navLinksMobile");
-        if(navLinksMobile.style.display === "none" || navLinksMobile.style.marginLeft == "100vw") {
+        if (navLinksMobile.style.display === "none" || navLinksMobile.style.marginLeft == "100vw") {
             navLinksMobile.style.marginLeft = "0";
 
             this.innerHTML = `<i class="fa-solid fa-xmark"></i>`

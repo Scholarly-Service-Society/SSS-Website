@@ -5,7 +5,7 @@ let $container = $(".imagesGalleryImages");
 
 $container.html("");
 
-for(let i = 0; i < images.length; i++) {
+for (let i = 0; i < images.length; i++) {
     let img = document.createElement("img");
     img.src = images[i];
     img.alt = descriptions[i];
@@ -14,7 +14,7 @@ for(let i = 0; i < images.length; i++) {
 
     $container.append(`<img src="${images[i]}" alt="${descriptions[i]}" class="imageGalleryImageSmall" id = "${descriptions[i]}">`);
 
-    if(i === 0) {
+    if (i === 0) {
         changeImage(images[i], descriptions[i], descriptions[i]);
 
         document.getElementById(descriptions[i]).classList.add("active");
@@ -24,7 +24,7 @@ for(let i = 0; i < images.length; i++) {
 function changeImage(src, alt, desc) {
     document.querySelector(".imagesGalleryMainImage").style.opacity = "0";
 
-    window.setTimeout(function() {
+    window.setTimeout(function () {
         document.querySelector(".imagesGalleryMainImage").style.opacity = "1";
 
         let $mainImage = $(".imagesGalleryMainImage");
@@ -35,11 +35,11 @@ function changeImage(src, alt, desc) {
 }
 
 let allImgs = document.querySelectorAll(".imageGalleryImageSmall");
-for(let i = 0; i < allImgs.length; i++) {
-    allImgs[i].addEventListener("click", function() {
+for (let i = 0; i < allImgs.length; i++) {
+    allImgs[i].addEventListener("click", function () {
         changeImage(this.src, this.alt, this.id);
 
-        for(let ii = 0; ii < allImgs.length; ii++) {
+        for (let ii = 0; ii < allImgs.length; ii++) {
             allImgs[ii].classList.remove("active");
         }
 
@@ -54,7 +54,7 @@ function nextImage() {
     let curIdx = descriptions.indexOf(curDesc);
     let nextSrc;
 
-    if(curIdx === images.length - 1) {
+    if (curIdx === images.length - 1) {
         nextSrc = images[0];
     } else {
         nextSrc = images[curIdx + 1];
@@ -64,14 +64,14 @@ function nextImage() {
 
     changeImage(nextSrc, nextDesc, nextDesc);
 
-    for(let ii = 0; ii < allImgs.length; ii++) {
+    for (let ii = 0; ii < allImgs.length; ii++) {
         allImgs[ii].classList.remove("active");
     }
 
     document.getElementById(nextDesc).classList.add("active");
 }
 
-document.querySelector(".btnRight").addEventListener("click", function() {
+document.querySelector(".btnRight").addEventListener("click", function () {
     nextImage();
 });
 
@@ -82,7 +82,7 @@ function prevImage() {
     let curIdx = descriptions.indexOf(curDesc);
     let prevSrc;
 
-    if(curIdx === 0) {
+    if (curIdx === 0) {
         prevSrc = images[images.length - 1];
     } else {
         prevSrc = images[curIdx - 1];
@@ -92,13 +92,13 @@ function prevImage() {
 
     changeImage(prevSrc, prevDesc, prevDesc);
 
-    for(let ii = 0; ii < allImgs.length; ii++) {
+    for (let ii = 0; ii < allImgs.length; ii++) {
         allImgs[ii].classList.remove("active");
     }
 
     document.getElementById(prevDesc).classList.add("active");
 }
 
-document.querySelector(".btnLeft").addEventListener("click", function() {
+document.querySelector(".btnLeft").addEventListener("click", function () {
     prevImage();
 });

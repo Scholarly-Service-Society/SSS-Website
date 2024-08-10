@@ -82,7 +82,10 @@
     max-width: 95%;
 }
 
-.projectDescription, .projectDate, .projectLocation, .projectLink {
+.projectDescription,
+.projectDate,
+.projectLocation,
+.projectLink {
     font-size: 18px;
 
     color: var(--dark);
@@ -133,7 +136,10 @@
         margin-bottom: 7.5px;
     }
 
-    .projectDescription, .projectDate, .projectLocation, .projectLink {
+    .projectDescription,
+    .projectDate,
+    .projectLocation,
+    .projectLink {
         font-size: 16px;
     }
 

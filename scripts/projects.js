@@ -4,13 +4,13 @@ function generateZoneButton() {
     let $zoneButtonContainer = $(".projectsZoneButtonContainer");
     $zoneButtonContainer.empty();
 
-    for(let i = 0; i < zones.length; i++) {
+    for (let i = 0; i < zones.length; i++) {
         let zoneButton = document.createElement("button");
         zoneButton.classList.add("projectsZoneButton");
         zoneButton.textContent = chapters[zones[i]].name;
         zoneButton.id = zones[i];
 
-        zoneButton.onclick = function() {
+        zoneButton.onclick = function () {
             generateProjects(zones[i]);
         }
 
@@ -26,8 +26,8 @@ function generateProjects(zone) {
 
     $(".projectsTitle").text("Projects in " + chapters[zone].name);
 
-    if(Object.keys(projects[zone]).length > 0) {
-        for(let i = 0; i < Object.keys(projects[zone]).length; i++) {
+    if (Object.keys(projects[zone]).length > 0) {
+        for (let i = 0; i < Object.keys(projects[zone]).length; i++) {
             let project = projects[zone][Object.keys(projects[zone])[i]];
 
             let $project = $("<div>").addClass("project");

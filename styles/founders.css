@@ -11,7 +11,7 @@
     justify-content: space-between;
     align-items: center;
 
-    text-align: center  ;
+    text-align: center;
 
     width: 85%;
 
@@ -28,7 +28,8 @@
     width: 20vw;
 }
 
-.founderRight img, .founderLeft img {
+.founderRight img,
+.founderLeft img {
     width: 100%;
     max-width: 300px;
 

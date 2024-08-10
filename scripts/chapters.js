@@ -2,7 +2,7 @@ let chapterKeys = Object.keys(chapters);
 
 let chaptersContainer = document.querySelector(".chapters");
 
-for(let i = 0; i < chapterKeys.length; i++) {
+for (let i = 0; i < chapterKeys.length; i++) {
     let chapter = chapters[chapterKeys[i]];
 
     let newChapter = document.createElement("div");

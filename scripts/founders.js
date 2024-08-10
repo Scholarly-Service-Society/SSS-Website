@@ -8,7 +8,7 @@ let founder = document.createElement("div");
 founder.classList.add("founder");
 
 
-for(let i = 0; i < foundersKeys.length; i++) {
+for (let i = 0; i < foundersKeys.length; i++) {
     let founder = document.createElement("div");
     founder.classList.add("founder");
 
@@ -37,11 +37,11 @@ for(let i = 0; i < foundersKeys.length; i++) {
 
     founderRight.append(founderImage);
 
-    if(innerWidth < 1250) {
+    if (innerWidth < 1250) {
         founder.append(founderLeft);
         founder.append(founderRight);
     } else {
-        if(i === 0) {
+        if (i === 0) {
             founder.append(founderLeft);
             founder.append(founderRight);
         } else {
