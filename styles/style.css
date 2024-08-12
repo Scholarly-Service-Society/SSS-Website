@@ -11,6 +11,8 @@ body {
 
     background-color: var(--bg);
 
+    width: 100vw;
+
     --bg: #FFFAF1;
     --logo: #59493C;
     --dark: #3B271D;
