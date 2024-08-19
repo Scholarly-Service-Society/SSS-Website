@@ -17,6 +17,12 @@ let chapters = {
         description: "The Scholarly Service Society - London, UK Chapter is the 3rd established SSS Chapter and 1st International Chapter which looks to expand the SSS mission internationally to the UK, providing teenagers with the opportunity to volunteer and make a difference in their community, not just in the USA, but now across the globe.",
         link: "https://classroom.google.com/c/NzAyOTc4NTM0MDQx?cjc=h4xrdsb"
     },
+    coh: {
+        name: "Cleveland, Ohio, USA",
+        leader: "Ibrahim Daud",
+        description: "The Scholarly Service Society - Cleveland, Ohio Chapter is the 4th established SSS Chapter which aims to empower teenagers in Ohio to foster cleaner, safer, and more educated communities through volunteerism. We aim to keep following in the footsteps laid by the other chapters, providing our members with a variety of volunteer opportunities that align with their fields of interest, including STEM, Business, Medicine, Service, and more.",
+        link: "https://classroom.google.com/c/NzA5Mzc4NDQxMDMx?cjc=t5bgbfp"
+    },
 }
 
 let projects = {
@@ -91,9 +97,17 @@ let projects = {
             location: "Mansfield Township Community Park",
             image: "images/projects/mansfield/mansfieldProject10.png"
         },
+        p11: {
+            title: "Mansfield Hedding Kinkora Road Clean Up",
+            description: "Collaborated with the Nothern Burlington Boys Basketball Team in order to clean up 6 bags of trash with 14 Volunteers",
+            date: "August 14th, 2024",
+            location: "Mansfield Hedding Kinkora Road",
+            image: "images/projects/mansfield/mansfieldProject11.png"
+        },
     },
     hnj: {},
     luk: {},
+    coh: {},
 }
 
 let founders = {
