@@ -23,6 +23,18 @@ let chapters = {
         description: "The Scholarly Service Society - Cleveland, Ohio Chapter is the 4th established SSS Chapter which aims to empower teenagers in Ohio to foster cleaner, safer, and more educated communities through volunteerism. We aim to keep following in the footsteps laid by the other chapters, providing our members with a variety of volunteer opportunities that align with their fields of interest, including STEM, Business, Medicine, Service, and more.",
         link: "https://classroom.google.com/c/NzA5Mzc4NDQxMDMx?cjc=t5bgbfp"
     },
+    tca: {
+        name: "Toronto, Ontario, Canada",
+        leader: "Karanveer Brar",
+        description: "The Scholarly Service Society - Toronto, Canada Chapter is the 5th established SSS Chapter and 2nd International Chapter, helping SSS expand into a 3rd Country - Canada, and continue to expand the SSS mission globally, building on the already growing foundation and hence being able to make a difference to the community in a 3rd country.",
+        link: "TBD",
+    },
+    ppa: {
+        name: "Philadelphia, Pennsylvania, USA",
+        leader: "Sparsh Gadkari",
+        description: "The Scholarly Service Society - Philadelphia, Pennsylvania Chapter is the 6th established SSS Chapter and now the 4th Chapter in the USA, helping expand SSS into a 3rd State, allowing the organisation to continue fostering cleaner, safer, and more educated communities through the power volunteerism across the globe.",
+        link: "TBD",
+    }
 }
 
 let projects = {
@@ -105,9 +117,19 @@ let projects = {
             image: "images/projects/mansfield/mansfieldProject11.png"
         },
     },
-    hnj: {},
+    hnj: {
+        p1: {
+            title: "Hightstown Anker Park Clean Up",
+            description: "Cleaned Up Anker Park and Collected 10 Bags of Trash thanks to the help of 17 Volunteers and the East Windsor Police Department",
+            date: "September 1st, 2024",
+            location: "Hightstown Anker Park",
+            image: "images/projects/hightstown/hightstownProject1.png"
+        }
+    },
     luk: {},
     coh: {},
+    tca: {},
+    ppa: {},
 }
 
 let founders = {
