@@ -4,6 +4,10 @@
     box-sizing: border-box;
 }
 
+html, body {
+    overflow-x: hidden;
+}
+
 body {
     font-family: "Noto Serif", serif;
     font-weight: 400;
@@ -25,6 +29,8 @@ body {
     --light2: #ece1c9;
 
     overflow-x: hidden;
+
+    position: relative;
 }
 
 .innerLink {
