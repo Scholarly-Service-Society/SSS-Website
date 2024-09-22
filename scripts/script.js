@@ -116,6 +116,13 @@ let projects = {
             location: "Mansfield Hedding Kinkora Road",
             image: "images/projects/mansfield/mansfieldProject11.png"
         },
+        p12: {
+            title: "Chesterfield Financial Literacy Workshop",
+            description: "Collaborated with Khalsa Financial Care and DAY Chesterfield to give a 30 Minute Presentation to 25 Asian Immigrants, covering the Pillars of Financial Literacy",
+            date: "September 15th, 2024",
+            location: "Crosswicks Community House",
+            image: "images/projects/mansfield/mansfieldProject12.png"
+        }
     },
     hnj: {
         p1: {
