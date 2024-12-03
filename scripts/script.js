@@ -1,14 +1,14 @@
 let chapters = {
     mnj: {
-        name: "Mansfield, New Jersey, USA",
+        name: "Columbus, New Jersey, USA",
         leader: "Pahul Virk, Yusuf Dagli",
-        description: "The Scholarly Service Society - Mansfield, New Jersey chapter is dedicated to empowering teenagers in New Jersey to foster cleaner, safer, and more educated communities through volunteerism. We aim to provide our members with a variety of volunteer opportunities that align with their fields of interest, such as business, STEM, medicine, law, computer science, and more.",
+        description: "The Scholarly Service Society - Columbus, New Jersey chapter is dedicated to empowering teenagers in New Jersey to foster cleaner, safer, and more educated communities through volunteerism. We aim to provide our members with a variety of volunteer opportunities that align with their fields of interest, such as business, STEM, medicine, law, computer science, and more.",
         link: "https://classroom.google.com/c/NjI4ODU1MjMyNTgw?cjc=tcgfcgx"
     },
     hnj: {
         name: "Hightstown, New Jersey, USA",
         leader: "Amrit Mann, Harshbir Guron",
-        description: "The Scholarly Service Society - Hightstown, New Jersey Chapter is the 2nd established SSS Chapter which aims to follow in the footsteps of the Mansfield Chapter, building on their foundations to continue empowering teenagers and the community, via the powers of volunteering, teamwork, and communication.",
+        description: "The Scholarly Service Society - Hightstown, New Jersey Chapter is the 2nd established SSS Chapter which aims to follow in the footsteps of the Columbus Chapter, building on their foundations to continue empowering teenagers and the community, via the powers of volunteering, teamwork, and communication.",
         link: "https://classroom.google.com/c/NjgxMjAzODU5NTQw?cjc=p2lvowh"
     },
     luk: {
@@ -27,13 +27,19 @@ let chapters = {
         name: "Toronto, Ontario, Canada",
         leader: "Karanveer Brar",
         description: "The Scholarly Service Society - Toronto, Canada Chapter is the 5th established SSS Chapter and 2nd International Chapter, helping SSS expand into a 3rd Country - Canada, and continue to expand the SSS mission globally, building on the already growing foundation and hence being able to make a difference to the community in a 3rd country.",
-        link: "TBD",
+        link: "https://classroom.google.com/c/NzA1MDQzNDA1NDg0?cjc=rcfwnyi",
     },
     ppa: {
         name: "Philadelphia, Pennsylvania, USA",
         leader: "Sparsh Gadkari",
         description: "The Scholarly Service Society - Philadelphia, Pennsylvania Chapter is the 6th established SSS Chapter and now the 4th Chapter in the USA, helping expand SSS into a 3rd State, allowing the organisation to continue fostering cleaner, safer, and more educated communities through the power volunteerism across the globe.",
-        link: "TBD",
+        link: "https://classroom.google.com/c/NzEwMjMwNjgzNzQ0?cjc=o7qmvw7",
+    },
+    tjp: {
+        name: "Tokyo, Japan",
+        leader: "TBD",
+        description: "The Scholarly Service Society - Tokyo, Japan Chapter is the 7th established SSS Chapter and has expanded the SSS Mission to a 4th Country on the other side of the Globe - Japan - allowing the organisation to continue fostering cleaner, safer, and more educated communities through the power volunteerism, but now on the other side of the world.",
+        link: "https://classroom.google.com/c/NzI4ODc0MjM4MjA5?cjc=u2ynrg4",
     }
 }
 
@@ -122,7 +128,28 @@ let projects = {
             date: "September 15th, 2024",
             location: "Crosswicks Community House",
             image: "images/projects/mansfield/mansfieldProject12.png"
-        }
+        },
+        p13: {
+            title: "Petticoat Bridge Road Cleanup",
+            description: "Collaborated with the Northern Burlington Class of 2026 to clean up Petticoat Bridge Road and also as a fundraiser. Picked up over 4 Bags of Trash from both sides of the road and bettered the surroundings",
+            date: "October 6th, 2024",
+            location: "Mansfield Petticoat Bridge Road",
+            image: "images/projects/mansfield/mansfieldProject13.png"
+        },
+        p14: {
+            title: "College Food Insecurity Talk",
+            description: "Worked with Drexel University and the SSS Philadelphia Chapter in order to deliver a talk about the issues related to college food insecurity and how to tackle it",
+            date: "November 8th, 2024",
+            location: "Drexel University, PA",
+            image: "images/projects/mansfield/mansfieldProject14.png"
+        },
+        p15: {
+            title: "Mansfield Holiday Book Drive",
+            description: "Worked to collect books in sellable condition to donate to the Burlington County Public Library to help give old books a use and encourage literacy",
+            date: "Nov 10th to Dec 10th, 2024",
+            location: "Burlington County, NJ",
+            image: "images/projects/mansfield/mansfieldProject15.png"
+        },
     },
     hnj: {
         p1: {
@@ -131,12 +158,31 @@ let projects = {
             date: "September 1st, 2024",
             location: "Hightstown Anker Park",
             image: "images/projects/hightstown/hightstownProject1.png"
-        }
+        },
     },
-    luk: {},
+    luk: {
+        p1: {
+            title: "AI & Future Applications Talk",
+            description: "Hosted an online talk on AI and its Future Applications with Dr. Hong Zhou, sharing relevant information about AI, AI & The Future, and also Careers in AI",
+            date: "December 6th, 2024",
+            location: "Online - Zoom",
+            image: "images/projects/london/londonProject1.png"
+        },
+    },
     coh: {},
     tca: {},
-    ppa: {},
+    ppa: {
+        p1: {
+            title: "College Food Insecurity Talk",
+            description: "Worked with Drexel University and the SSS Columbus Chapter in order to deliver a talk about the issues related to college food insecurity and how to tackle it",
+            date: "November 8th, 2024",
+            location: "Drexel University, PA",
+            image: "images/projects/philadelphia/philadelphiaProject1.png"
+        },
+    },
+    tjp: {
+
+    },
 }
 
 let founders = {

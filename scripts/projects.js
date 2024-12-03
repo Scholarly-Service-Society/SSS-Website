@@ -76,6 +76,7 @@ function generateProjects(zone) {
         let noProjects = document.createElement("div");
         noProjects.classList.add("noProjects");
         noProjects.textContent = "No projects yet in this zone.";
+    
 
         $projects.append(noProjects);
     }
