@@ -25,7 +25,12 @@
 .chapterSubtitle {
     font-size: 22px;
     font-weight: 400;
-    color: var(--mDark);
+    color: var(--logo);
+    margin-bottom: 10px;
+}
+
+.chapterFounded {
+    font-size: 21px;
     margin-bottom: 10px;
 }
 

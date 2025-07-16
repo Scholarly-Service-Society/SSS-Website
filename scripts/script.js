@@ -3,43 +3,71 @@ let chapters = {
         name: "Columbus, New Jersey, USA",
         leader: "Pahul Virk, Yusuf Dagli",
         description: "The Scholarly Service Society - Columbus, New Jersey chapter is dedicated to empowering teenagers in New Jersey to foster cleaner, safer, and more educated communities through volunteerism. We aim to provide our members with a variety of volunteer opportunities that align with their fields of interest, such as business, STEM, medicine, law, computer science, and more.",
-        link: "https://classroom.google.com/c/NjI4ODU1MjMyNTgw?cjc=tcgfcgx"
+        link: "https://classroom.google.com/c/NjI4ODU1MjMyNTgw?cjc=tcgfcgx",
+        date: "February 2024",
     },
     hnj: {
         name: "Hightstown, New Jersey, USA",
         leader: "Amrit Mann, Harshbir Guron",
         description: "The Scholarly Service Society - Hightstown, New Jersey Chapter is the 2nd established SSS Chapter which aims to follow in the footsteps of the Columbus Chapter, building on their foundations to continue empowering teenagers and the community, via the powers of volunteering, teamwork, and communication.",
-        link: "https://classroom.google.com/c/NjgxMjAzODU5NTQw?cjc=p2lvowh"
+        link: "https://classroom.google.com/c/NjgxMjAzODU5NTQw?cjc=p2lvowh",
+        date: "July 2024"
     },
     luk: {
         name: "London, England, UK",
         leader: "Ishbir Singh, Tharul Wanni-Arachchige",
         description: "The Scholarly Service Society - London, UK Chapter is the 3rd established SSS Chapter and 1st International Chapter which looks to expand the SSS mission internationally to the UK, providing teenagers with the opportunity to volunteer and make a difference in their community, not just in the USA, but now across the globe.",
-        link: "https://classroom.google.com/c/NzAyOTc4NTM0MDQx?cjc=h4xrdsb"
+        link: "https://classroom.google.com/c/NzAyOTc4NTM0MDQx?cjc=h4xrdsb",
+        date: "August 2024"
     },
-    coh: {
-        name: "Cleveland, Ohio, USA",
-        leader: "Ibrahim Daud",
-        description: "The Scholarly Service Society - Cleveland, Ohio Chapter is the 4th established SSS Chapter which aims to empower teenagers in Ohio to foster cleaner, safer, and more educated communities through volunteerism. We aim to keep following in the footsteps laid by the other chapters, providing our members with a variety of volunteer opportunities that align with their fields of interest, including STEM, Business, Medicine, Service, and more.",
-        link: "https://classroom.google.com/c/NzA5Mzc4NDQxMDMx?cjc=t5bgbfp"
+    ppa: {
+        name: "Philadelphia, Pennsylvania, USA",
+        leader: "Sparsh Gadkari",
+        description: "The Scholarly Service Society - Philadelphia, Pennsylvania Chapter is the 4th established SSS Chapter and now the 3rd Chapter in the USA, helping expand SSS into a 3rd State, allowing the organisation to continue fostering cleaner, safer, and more educated communities through the power volunteerism across the globe.",
+        link: "https://classroom.google.com/c/NzEwMjMwNjgzNzQ0?cjc=o7qmvw7",
+        date: "August 2024",
     },
     tca: {
         name: "Toronto, Ontario, Canada",
         leader: "Karanveer Brar",
         description: "The Scholarly Service Society - Toronto, Canada Chapter is the 5th established SSS Chapter and 2nd International Chapter, helping SSS expand into a 3rd Country - Canada, and continue to expand the SSS mission globally, building on the already growing foundation and hence being able to make a difference to the community in a 3rd country.",
         link: "https://classroom.google.com/c/NzA1MDQzNDA1NDg0?cjc=rcfwnyi",
+        date: "September 2024",
     },
-    ppa: {
-        name: "Philadelphia, Pennsylvania, USA",
-        leader: "Sparsh Gadkari",
-        description: "The Scholarly Service Society - Philadelphia, Pennsylvania Chapter is the 6th established SSS Chapter and now the 4th Chapter in the USA, helping expand SSS into a 3rd State, allowing the organisation to continue fostering cleaner, safer, and more educated communities through the power volunteerism across the globe.",
-        link: "https://classroom.google.com/c/NzEwMjMwNjgzNzQ0?cjc=o7qmvw7",
+    coh: {
+        name: "Cleveland, Ohio, USA",
+        leader: "Ibrahim Daud",
+        description: "The Scholarly Service Society - Cleveland, Ohio Chapter is the 6th established SSS Chapter which aims to empower teenagers in Ohio to foster cleaner, safer, and more educated communities through volunteerism. We aim to keep following in the footsteps laid by the other chapters, providing our members with a variety of volunteer opportunities that align with their fields of interest, including STEM, Business, Medicine, Service, and more.",
+        link: "https://classroom.google.com/c/NzA5Mzc4NDQxMDMx?cjc=t5bgbfp",
+        date: "September 2024",
+    },
+    rnj: {
+        name: "Robbinsville, NJ, USA",
+        leader: "Rehit Sran",
+        description: "The Scholarly Service Society - Robbinsville, New Jersey Chapter is the 7th established SSS Chapter and now the 3rd Chapter from New Jersey, allowing the organisation to continue fostering cleaner, safer, and more educated communities through the power volunteerism, and deepening the SSS impact in New Jersey.",
+        link: "https://classroom.google.com/c/NzU5OTUzMjI1NDg0?cjc=3yyld37d",
+        date: "September 2024",
+    },
+    bnj: {
+        name: "Bordentown, NJ, USA",
+        leader: "Harman Gill",
+        description: "The Scholarly Service Society - Bordentown, New Jersey Chapter is the 8th established SSS Chapter. It is now the 4th Chapter in New Jersey, really highlighting the strength of the cause within New Jersey and the community created by the SSS mission which this chapter will continue to represent.",
+        link: "https://classroom.google.com/c/NzIzMzE5MDcxODM3?cjc=pa3esnn",
+        date: "October 2024",
     },
     tjp: {
         name: "Tokyo, Japan",
-        leader: "TBD",
-        description: "The Scholarly Service Society - Tokyo, Japan Chapter is the 7th established SSS Chapter and has expanded the SSS Mission to a 4th Country on the other side of the Globe - Japan - allowing the organisation to continue fostering cleaner, safer, and more educated communities through the power volunteerism, but now on the other side of the world.",
+        leader: "Masaya Miruno",
+        description: "The Scholarly Service Society - Tokyo, Japan Chapter is the 9th established SSS Chapter and has expanded the SSS Mission to a 4th Country on the other side of the Globe - Japan - allowing the organisation to continue fostering cleaner, safer, and more educated communities through the power volunteerism, but now on the other side of the world.",
         link: "https://classroom.google.com/c/NzI4ODc0MjM4MjA5?cjc=u2ynrg4",
+        date: "December 2024",
+    },
+    trk: {
+        name: "Turkey",
+        leader: "Yusuf Dagli, Yasin Dagli",
+        description: "The Scholarly Service Society - Turkey Chapter is the 10th SSS Chapter, now taking the SSS mission to the other side of the globe in Turkey. This expansion really highlights the global range of the SSS impact, as the organisation has now managed to end up in a 4th country.",
+        link: "TBD",
+        date: "June 2025",
     }
 }
 
@@ -159,6 +187,13 @@ let projects = {
             location: "Hightstown Anker Park",
             image: "images/projects/hightstown/hightstownProject1.png"
         },
+        p2: {
+            title: "Community Clean Up Day",
+            description: "Hosted a communnity cleanup day, using our non-profit status in order to provide volunteer hours for those involved.",
+            date: "June 22nd, 2025",
+            location: "Etra Park",
+            image: "images/projects/hightstown/hightstownProject2.png"
+        },
     },
     luk: {
         p1: {
@@ -168,8 +203,23 @@ let projects = {
             location: "Online - Zoom",
             image: "images/projects/london/londonProject1.png"
         },
+        p2: {
+            title: "Computer Science at Uni Talk",
+            description: "Hosted an online talk on what it is like to study Computer Science at University in the UK. Talk included information on admissions and was hosted by a current student",
+            date: "July 11th, 2025",
+            location: "Online - Zoom",
+            image: "images/projects/london/londonProject2.png"
+        }
     },
-    coh: {},
+    coh: {
+        p1: {
+            title: "Online Business Workshop",
+            description: "Hosted an online talk by Humza Islam on business. Workshop was titled 'How to build a successful brand with entrepreneur Humza Islam', and included a Q&A",
+            date: "February 23rd, 2025",
+            location: "Online - Zoom",
+            image: "images/projects/cleveland/clevelandProject1.png"
+        },
+    },
     tca: {},
     ppa: {
         p1: {
@@ -183,6 +233,15 @@ let projects = {
     tjp: {
 
     },
+    rnj: {
+        
+    },
+    bnj: {
+        
+    },
+    trk: {
+        
+    }
 }
 
 let founders = {

@@ -21,6 +21,12 @@ for (let i = 0; i < chapterKeys.length; i++) {
 
     newChapter.appendChild(chapterLeader);
 
+    let chapterFounded = document.createElement("div");
+    chapterFounded.classList.add("chapterFounded");
+    chapterFounded.textContent = "Founded: " + chapter.date;
+
+    newChapter.appendChild(chapterFounded);
+
     let chapterContent = document.createElement("div");
     chapterContent.classList.add("chapterContent");
 
