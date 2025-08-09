@@ -178,6 +178,13 @@ let projects = {
             location: "Burlington County, NJ",
             image: "images/projects/mansfield/mansfieldProject15.png"
         },
+        p16: {
+            title: "Dawes Park Clean Up",
+            description: "In a collaboration between 4 SSS Chapters across New Jersey and Philadelphia alongside Assemblywoman Tennile McCoy, the SSS involved over 25 volunteers to clean up Dawes Park to make the community cleaner",
+            date: "August 8th, 2025",
+            location: "Dawes Park, Hightstown, NJ",
+            image: "images/projects/multi/njProj.jpg"
+        }
     },
     hnj: {
         p1: {
@@ -194,6 +201,13 @@ let projects = {
             location: "Etra Park",
             image: "images/projects/hightstown/hightstownProject2.png"
         },
+        p3: {
+            title: "Dawes Park Clean Up",
+            description: "In a collaboration between 4 SSS Chapters across New Jersey and Philadelphia alongside Assemblywoman Tennile McCoy, the SSS involved over 25 volunteers to clean up Dawes Park to make the community cleaner",
+            date: "August 8th, 2025",
+            location: "Dawes Park, Hightstown, NJ",
+            image: "images/projects/multi/njProj.jpg"
+        }
     },
     luk: {
         p1: {
@@ -209,6 +223,20 @@ let projects = {
             date: "July 11th, 2025",
             location: "Online - Zoom",
             image: "images/projects/london/londonProject2.png"
+        },
+        p3: {
+            title: "A Career in Science and Tech Policy Talk",
+            description: "Hosted an online talk delivered by Dr. Mann Virdee on Natural Sciences, Science and Tech, and Politics and Policy, including information on governmental policy and science & tech research",
+            date: "July 24th, 2025",
+            location: "Online - Zoom",
+            image: "images/projects/london/londonProject3.png"
+        },
+        p4: {
+            title: "Engineering & Science at Uni Talk",
+            description: "Hosted an online talk by a current Oxford & Imperial Engineering offer holder on admissions at top UK Universities, admissions tests preparation, interview advice, and also A-Level advice, involving over 25 participants",
+            date: "August 4th, 2025",
+            location: "Online - Zoom",
+            image: "images/projects/london/londonProject4.png"
         }
     },
     coh: {
@@ -229,12 +257,25 @@ let projects = {
             location: "Drexel University, PA",
             image: "images/projects/philadelphia/philadelphiaProject1.png"
         },
+        p2: {
+            title: "Dawes Park Clean Up",
+            description: "In a collaboration between 4 SSS Chapters across New Jersey and Philadelphia alongside Assemblywoman Tennile McCoy, the SSS involved over 25 volunteers to clean up Dawes Park to make the community cleaner",
+            date: "August 8th, 2025",
+            location: "Dawes Park, Hightstown, NJ",
+            image: "images/projects/multi/njProj.jpg"
+        }
     },
     tjp: {
 
     },
     rnj: {
-        
+        p1: {
+            title: "Dawes Park Clean Up",
+            description: "In a collaboration between 4 SSS Chapters across New Jersey and Philadelphia alongside Assemblywoman Tennile McCoy, the SSS involved over 25 volunteers to clean up Dawes Park to make the community cleaner",
+            date: "August 8th, 2025",
+            location: "Dawes Park, Hightstown, NJ",
+            image: "images/projects/multi/njProj.jpg"
+        }
     },
     bnj: {
         
