@@ -4,10 +4,11 @@
 <head>
     <meta charset='utf-8'>
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-    <title>Volunteering | Scholarly Service Society</title>
+    <title>Partnerships | Scholarly Service Society</title>
     <meta name='description' content=''>
     <meta name='viewport' content="width=device-width, initial-scale=1.0">
 <meta name="apple-mobile-web-app-capable" content="yes" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel='stylesheet' href='styles/style.css'>
     <link rel='stylesheet' href='styles/navbar.css'>
     <link rel='stylesheet' href='styles/pages.css'>
@@ -18,60 +19,67 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,100..900;1,100..900&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 
 <body>
-    <nav>
-        <div class="navLeft">
-            <a href="index.html" class="navLogo">
+    <nav class="navbar navbar-expand-lg navbar-light" aria-label="Main navigation">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center" href="index.html">
                 <div class="navLogoImageContainer">
                     <img class="navLogoImage" src="images/SSS Logo.JPG" alt="Scholarly Service Society">
                 </div>
-                <div class="navLogoText">
+                <div class="navLogoText ms-2">
                     <div class="navLogoTextTitle">Scholarly Service Society</div>
                     <div class="navLogoTextSubtitle">Empower. Serve. Build.</div>
                 </div>
             </a>
-        </div>
 
-        <div class="navRight">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="mainNav">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <li class="nav-item"><a class="nav-link" href="chapters.html">Chapters</a></li>
+                    <li class="nav-item"><a class="nav-link" href="volunteering.html">Volunteering</a></li>
+                    <li class="nav-item"><a class="nav-link" href="founders.html">Founders</a></li>
+                    <li class="nav-item"><a class="nav-link" href="projects.html">Projects</a></li>
+                    <li class="nav-item"><a class="nav-link" href="partnerships.html">Partnerships</a></li>
+                    <li class="nav-item"><a class="nav-link contactLink btn" href="contact.html">Contact Us</a></li>
+                </ul>
+            </div>
         </div>
     </nav>
 
     <div class="pageSection firstSection">
-        <div class="pageSectionTitle">Partnering With SSS</div>
+        <div class="pageSectionTitle" data-aos="fade-up">Partnerships</div>
         <div class="pageSectionContent">
-            <div class="pageSectionContentText">Interested in our work and our mission and want to partner with
-                us? We are open to sponsorships for charity events, and also collarborations with organizations
-                operating locally to our <a href="chapters.html" target="_blank" class="pageSectionContentLink">
-                    Chapters</a>. Feel free to contact us with any questions at <a
-                    href="mailto:scholarlyservicesociety@gmail.com" target="_blank"
-                    class="pageSectionContentLink">scholarlyservicesociety@gmail.com</a>.</div>
+            <div class="pageSectionContentText" data-aos="fade-up">The Scholarly Service Society collaborates with a diverse range of partners to expand the reach and impact of our community service initiatives. Our partners help by providing resources, mentorship, and opportunities for volunteers to grow.</div>
 
-
-            <div class="pageSectionSubtitle">Partnerships</div>
-            <div class="pageSectionContentText">
-                If you're interested in forming any type of partnership with us, please fill out the form below. We will
-                get back to you as soon as possible.
-                <div class="pageSectionContentButtonContainer">
-                    <a href="https://forms.gle/uWtyWf72DxjdqxpZ6" target="_blank" class="pageSectionContentButton">
-                        Partnership Form
-                    </a>
-                </div>
-            </div>
+            <div class="pageSectionSubtitle" data-aos="fade-up">Interested in Partnering?</div>
+            <div class="pageSectionContentText" data-aos="fade-up">If your organization would like to partner with SSS on volunteer events, educational programs, or community outreach, please reach out to us at <a class="pageSectionContentLink" href="mailto:scholarlyservicesociety@gmail.com">scholarlyservicesociety@gmail.com</a> and we will respond as soon as possible.</div>
         </div>
     </div>
 
     <footer class="footer">
         <div class="footerLeft"><i class="fa-regular fa-copyright"></i> Scholarly Service Society</div>
-        <div class="footerRight">Website by Ishbir Singh</div>
+        <div class="footerRight">Website by <a href = "https://www.linkedin.com/in/ishbir-singh/" target = "_blank" style = "color: var(--dark);">Ishbir Singh</a></div>
     </footer>
 
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        window.addEventListener('load', function(){
+            AOS.init({ once: true, duration: 700, easing: 'ease-out-cubic' });
+            if (window.AOS) { AOS.refresh(); setTimeout(function(){ AOS.refresh(); }, 250); }
+        });
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <script src='scripts/script.js'></script>
     <script src='scripts/navbar.js'></script>
     <script src='scripts/pages.js'></script>
+    <script src='scripts/partnerships.js'></script>
 </body>
 
 </html>

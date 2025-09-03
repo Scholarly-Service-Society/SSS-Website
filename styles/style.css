@@ -8,15 +8,7 @@ html, body {
     overflow-x: hidden;
 }
 
-body {
-    font-family: "Noto Serif", serif;
-    font-weight: 400;
-    font-style: normal;
-
-    background-color: var(--bg);
-
-    width: 100vw;
-
+:root {
     --bg: #FFFAF1;
     --logo: #59493C;
     --dark: #3B271D;
@@ -28,6 +20,25 @@ body {
     --light: #EFE0BB;
     --light2: #ece1c9;
 
+    --shadow: 0 8px 30px rgba(59,39,29,0.08);
+    --glass: rgba(255,255,255,0.6);
+    --transition-fast: 200ms;
+    --transition-medium: 400ms;
+
+    --navbar-height: 88px;
+}
+
+body {
+    font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif;
+    font-weight: 400;
+    font-style: normal;
+
+    background-color: var(--bg);
+
+    width: 100vw;
+
+    color: var(--dark);
+
     overflow-x: hidden;
     width: 100%;
     -webkit-box-sizing: border-box;
@@ -35,13 +46,17 @@ body {
             box-sizing: border-box;
 
     position: relative;
+
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 .innerLink {
-    color: var(--dark)
+    color: var(--dark);
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 3px;
 }
-
-/* Scrollbar */
 
 ::-webkit-scrollbar {
     width: 10px;
@@ -49,19 +64,36 @@ body {
 
 ::-webkit-scrollbar-track {
     background: #f1f1f1;
-
     border-radius: 15px;
 }
 
 ::-webkit-scrollbar-thumb {
     background: #888;
+    border-radius: 10px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
     background: #555;
 }
 
-/* Media Queries */
+@keyframes fadeUp {
+    from { opacity: 0; transform: translateY(14px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes subtleFloat {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-6px); }
+    100% { transform: translateY(0); }
+}
+
+.fade-up {
+    animation: fadeUp 600ms var(--transition-fast) both;
+}
+
+.float-slow {
+    animation: subtleFloat 6s ease-in-out infinite;
+}
 
 @media screen and (max-width: 1250px) {
     body {

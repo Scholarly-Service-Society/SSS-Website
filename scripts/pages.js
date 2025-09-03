@@ -8,7 +8,7 @@ footerLeft.innerHTML = `<i class="fa-regular fa-copyright"></i> Scholarly Servic
 
 let footerRight = document.createElement("div");
 footerRight.classList.add("footerRight");
-footerRight.textContent = "Website by Ishbir Singh";
+footerRight.innerHTML = 'Website by <a href="https://www.linkedin.com/in/ishbir-singh/" target="_blank" style="color: var(--dark);">Ishbir Singh</a>';
 
 footer.appendChild(footerLeft);
 footer.appendChild(footerRight);

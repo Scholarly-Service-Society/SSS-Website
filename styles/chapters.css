@@ -58,11 +58,21 @@
     font-weight: bold;
     text-decoration: none;
     border-radius: 5px;
-    transition: background-color 0.5s;
+    transition: background-color 200ms ease, color 200ms ease, box-shadow 200ms ease;
+    -webkit-transition: background-color 200ms ease, color 200ms ease, box-shadow 200ms ease;
 }
 
-.chapterContentButton:hover {
-    background-color: var(--mDark);
+a.chapterContentButton.btn, .chapterContentButton.btn-sm {
+    background-color: var(--mid);
+    color: var(--bg);
+}
+
+.chapterContentButton:hover,
+a.chapterContentButton.btn:hover,
+.chapterContentButton.btn-sm:hover {
+    background-color: var(--midLight);
+    color: var(--vDark);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.06);
 }
 
 /* Media Queries */

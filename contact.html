@@ -8,6 +8,7 @@
     <meta name='description' content=''>
     <meta name='viewport' content="width=device-width, initial-scale=1.0">
 <meta name="apple-mobile-web-app-capable" content="yes" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel='stylesheet' href='styles/style.css'>
     <link rel='stylesheet' href='styles/navbar.css'>
     <link rel='stylesheet' href='styles/pages.css'>
@@ -18,67 +19,79 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,100..900;1,100..900&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 
 <body>
-    <nav>
-        <div class="navLeft">
-            <a href="index.html" class="navLogo">
+    <nav class="navbar navbar-expand-lg navbar-light" aria-label="Main navigation">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center" href="index.html">
                 <div class="navLogoImageContainer">
                     <img class="navLogoImage" src="images/SSS Logo.JPG" alt="Scholarly Service Society">
                 </div>
-                <div class="navLogoText">
+                <div class="navLogoText ms-2">
                     <div class="navLogoTextTitle">Scholarly Service Society</div>
                     <div class="navLogoTextSubtitle">Empower. Serve. Build.</div>
                 </div>
             </a>
-        </div>
 
-        <div class="navRight">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="mainNav">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <li class="nav-item"><a class="nav-link" href="chapters.html">Chapters</a></li>
+                    <li class="nav-item"><a class="nav-link" href="volunteering.html">Volunteering</a></li>
+                    <li class="nav-item"><a class="nav-link" href="founders.html">Founders</a></li>
+                    <li class="nav-item"><a class="nav-link" href="projects.html">Projects</a></li>
+                    <li class="nav-item"><a class="nav-link" href="partnerships.html">Partnerships</a></li>
+                    <li class="nav-item"><a class="nav-link contactLink btn" href="contact.html">Contact Us</a></li>
+                </ul>
+            </div>
         </div>
     </nav>
 
     <div class="pageSection firstSection">
-        <div class="pageSectionTitle">Contact Us</div>
+        <div class="pageSectionTitle" data-aos="fade-up">Contact Us</div>
         <div class="pageSectionContent">
-            <div class="pageSectionContentText">
+            <div class="pageSectionContentText" data-aos="fade-up">
                 <span class="pageSectionContentBuffer"></span>Want to reach out to us? Have a question? Want to
                 collaborate? Feel free to contact us through the following methods:
             </div>
 
-            <div class="pageSectionSubtitle">
+            <div class="pageSectionSubtitle" data-aos="fade-up">
                 Email
             </div>
-            <div class="pageSectionContentText">
+            <div class="pageSectionContentText" data-aos="fade-up">
                 <span class="pageSectionContentBuffer"></span>For general inquiries, please email us at <a
-                    class="pageSectionContentLink"
+                    class="pageSectionContentLink" data-aos="fade-up"
                     href="mailto:scholarlyservicesociety@gmail.com">scholarlyservicesociety@gmail.com</a>
             </div>
 
-            <div class="pageSectionSubtitle">
+            <div class="pageSectionSubtitle" data-aos="fade-up">
                 Social Media
             </div>
-            <div class="pageSectionContentText">
+            <div class="pageSectionContentText" data-aos="fade-up">
                 <span class="pageSectionContentBuffer"></span>You can also connect with us on the following Social
                 Media:
                 <ul class="pageSectionContentList">
-                    <li class="pageSectionContentListItem">
-                        <a class="pageSectionContentLink listLink"
+                    <li class="pageSectionContentListItem" data-aos="fade-up">
+                        <a class="pageSectionContentLink listLink" data-aos="fade-up"
                             href="https://www.instagram.com/scholarlyservicesociety/" target="_blank">
                             <i class="fab fa-instagram"></i> Instagram
                         </a>
                     </li>
-                    <li class="pageSectionContentListItem">
-                        <a class="pageSectionContentLink listLink"
+                    <li class="pageSectionContentListItem" data-aos="fade-up">
+                        <a class="pageSectionContentLink listLink" data-aos="fade-up"
                             href="https://www.linkedin.com/company/scholarly-service-society/?viewAsMember=true"
                             target="_blank">
                             <i class="fab fa-linkedin"></i> LinkedIn
                         </a>
                     </li>
-                    <li class="pageSectionContentListItem">
-                        <a class="pageSectionContentLink listLink"
+                    <li class="pageSectionContentListItem" data-aos="fade-up">
+                        <a class="pageSectionContentLink listLink" data-aos="fade-up"
                             href="https://classroom.google.com/c/NjI4ODU1MjMyNTgw?cjc=tcgfcgx" target="_blank">
                             <i class="fa-brands fa-google"></i> Google Classroom
                         </a>
@@ -86,25 +99,25 @@
                 </ul>
             </div>
 
-            <div class="pageSectionSubtitle">
+            <div class="pageSectionSubtitle" data-aos="fade-up">
                 Other Links
             </div>
-            <div class="pageSectionContentText">
+            <div class="pageSectionContentText" data-aos="fade-up">
                 <ul class="pageSectionContentList">
-                    <li class="pageSectionContentListItem">
-                        <a class="pageSectionContentLink listLink" href="https://scholarlyservicesociety.org"
+                    <li class="pageSectionContentListItem" data-aos="fade-up">
+                        <a class="pageSectionContentLink listLink" data-aos="fade-up" href="https://scholarlyservicesociety.org"
                             target="_blank">
                             <i class="fas fa-link"></i> Website
                         </a>
                     </li>
-                    <li class="pageSectionContentListItem">
-                        <a class="pageSectionContentLink listLink" href="https://linktr.ee/scholarlyservicesociety"
+                    <li class="pageSectionContentListItem" data-aos="fade-up">
+                        <a class="pageSectionContentLink listLink" data-aos="fade-up" href="https://linktr.ee/scholarlyservicesociety"
                             target="_blank">
                             <i class="fas fa-link"></i> Linktr.ee
                         </a>
                     </li>
-                    <li class="pageSectionContentListItem">
-                        <a class="pageSectionContentLink listLink" href="https://tally.so/r/3qBxD9" target="_blank">
+                    <li class="pageSectionContentListItem" data-aos="fade-up">
+                        <a class="pageSectionContentLink listLink" data-aos="fade-up" href="https://tally.so/r/3qBxD9" target="_blank">
                             <i class="fas fa-link"></i> Start Your Own Chapter
                         </a>
                     </li>
@@ -115,9 +128,14 @@
 
     <footer class="footer">
         <div class="footerLeft"><i class="fa-regular fa-copyright"></i> Scholarly Service Society</div>
-        <div class="footerRight">Website by Ishbir Singh</div>
+        <div class="footerRight">Website by <a href = "https://www.linkedin.com/in/ishbir-singh/" target = "_blank" style = "color: var(--dark);">Ishbir Singh</a></div>
     </footer>
 
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        window.addEventListener('load', function(){ AOS.init({ once: true, duration: 700, easing: 'ease-out-cubic' }); });
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <script src='scripts/script.js'></script>
     <script src='scripts/navbar.js'></script>
     <script src='scripts/pages.js'></script>

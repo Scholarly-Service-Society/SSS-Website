@@ -15,7 +15,7 @@ let chapters = {
     },
     luk: {
         name: "London, England, UK",
-        leader: "Ishbir Singh, Tharul Wanni-Arachchige",
+        leader: 'Ishbir Singh, Tharul Wanni-Arachchige',
         description: "The Scholarly Service Society - London, UK Chapter is the 3rd established SSS Chapter and 1st International Chapter which looks to expand the SSS mission internationally to the UK, providing teenagers with the opportunity to volunteer and make a difference in their community, not just in the USA, but now across the globe.",
         link: "https://classroom.google.com/c/NzAyOTc4NTM0MDQx?cjc=h4xrdsb",
         date: "August 2024"

@@ -1,104 +1,99 @@
-let images = ["images/gallery/Mansfield Park Cleanup.png", "images/gallery/Aaronsen Road Cleanup.png", "images/gallery/Online AI Discussion Panel.png", "images/gallery/Sandwich Donation Drive.png", "images/gallery/Tree Branch Cleanup.png", "images/gallery/Hedding Kinkora Road Cleanup.png", "images/gallery/Anker Park Cleanup.png", "images/gallery/Petticoat Bridge Road Cleanup.png", "images/gallery/College Food Insecurity Talk.png", "images/gallery/Dawes Park Cleanup.png"];
-let descriptions = ["Mansfield Park Cleanup, New Jersey", "Aaronsen Road Cleanup, New Jersey", "Online AI Discussion Panel", "Sandwich Donation Drive, New Jersey", "Tree Branch Cleanup, New Jersey", "Hedding Kinkora Road Cleanup, New Jersey", "Anker Park Cleanup, New Jersey", "Petticoat Bridge Road Cleanup, New Jersey", "College Food Insecurity Talk, Philadelphia", "Dawes Park Cleanup, New Jersey"];
+window.addEventListener('DOMContentLoaded', function () {
+    const images = [
+        "images/gallery/Mansfield Park Cleanup.png",
+        "images/gallery/Aaronsen Road Cleanup.png",
+        "images/gallery/Online AI Discussion Panel.png",
+        "images/gallery/Sandwich Donation Drive.png",
+        "images/gallery/Tree Branch Cleanup.png",
+        "images/gallery/Hedding Kinkora Road Cleanup.png",
+        "images/gallery/Anker Park Cleanup.png",
+        "images/gallery/Petticoat Bridge Road Cleanup.png",
+        "images/gallery/College Food Insecurity Talk.png",
+        "images/gallery/Dawes Park Cleanup.png"
+    ];
+    const descriptions = [
+        "Mansfield Park Cleanup, New Jersey",
+        "Aaronsen Road Cleanup, New Jersey",
+        "Online AI Discussion Panel",
+        "Sandwich Donation Drive, New Jersey",
+        "Tree Branch Cleanup, New Jersey",
+        "Hedding Kinkora Road Cleanup, New Jersey",
+        "Anker Park Cleanup, New Jersey",
+        "Petticoat Bridge Road Cleanup, New Jersey",
+        "College Food Insecurity Talk, Philadelphia",
+        "Dawes Park Cleanup, New Jersey"
+    ];
 
-let $container = $(".imagesGalleryImages");
-
-$container.html("");
-
-for (let i = 0; i < images.length; i++) {
-    let img = document.createElement("img");
-    img.src = images[i];
-    img.alt = descriptions[i];
-    img.classList.add("imageGalleryImageSmall");
-    img.id = descriptions[i];
-
-    $container.append(`<img src="${images[i]}" alt="${descriptions[i]}" class="imageGalleryImageSmall" id = "${descriptions[i]}">`);
-
-    if (i === 0) {
-        changeImage(images[i], descriptions[i], descriptions[i]);
-
-        document.getElementById(descriptions[i]).classList.add("active");
+    const container = document.querySelector('.imagesGalleryImages');
+    if (!container) {
+        console.error('[Gallery] Container .imagesGalleryImages not found');
+        return;
     }
-}
 
-function changeImage(src, alt, desc) {
-    document.querySelector(".imagesGalleryMainImage").style.opacity = "0";
+    container.textContent = '';
 
-    window.setTimeout(function () {
-        document.querySelector(".imagesGalleryMainImage").style.opacity = "1";
-
-        let $mainImage = $(".imagesGalleryMainImage");
-        $mainImage.attr("src", src);
-        $mainImage.attr("alt", alt);
-        $(".imagesGalleryMainCaption").html(desc);
-    }, 250);
-}
-
-let allImgs = document.querySelectorAll(".imageGalleryImageSmall");
-for (let i = 0; i < allImgs.length; i++) {
-    allImgs[i].addEventListener("click", function () {
-        changeImage(this.src, this.alt, this.id);
-
-        for (let ii = 0; ii < allImgs.length; ii++) {
-            allImgs[ii].classList.remove("active");
+    function changeImage(src, alt, desc) {
+        const mainImgEl = document.querySelector('.imagesGalleryMainImage');
+        if (!mainImgEl) {
+            console.error('[Gallery] Main image element missing');
+            return;
         }
+        mainImgEl.style.transition = 'opacity 250ms ease';
+        mainImgEl.style.opacity = '0';
+        setTimeout(() => {
+            mainImgEl.src = src;
+            mainImgEl.alt = alt;
+            mainImgEl.style.opacity = '1';
+            const captionEl = document.querySelector('.imagesGalleryMainCaption');
+            if (captionEl) captionEl.textContent = desc;
+        }, 220);
+    }
 
-        this.classList.add("active");
+    images.forEach((src, i) => {
+        const img = document.createElement('img');
+        img.src = src;
+        img.alt = descriptions[i];
+        img.className = 'imageGalleryImageSmall';
+        img.id = `gallery-img-${i}`;
+        img.dataset.index = String(i);
+        img.addEventListener('error', () => {
+            console.warn(`[Gallery] Failed to load image: ${src}`);
+            img.style.display = 'none';
+        });
+        img.addEventListener('click', () => selectIndex(i));
+        container.appendChild(img);
     });
-}
 
-function nextImage() {
-    let currentImage = document.querySelector(".active");
-    let curDesc = currentImage.id;
-
-    let curIdx = descriptions.indexOf(curDesc);
-    let nextSrc;
-
-    if (curIdx === images.length - 1) {
-        nextSrc = images[0];
-    } else {
-        nextSrc = images[curIdx + 1];
+    function selectIndex(i) {
+        changeImage(images[i], descriptions[i], descriptions[i]);
+        document.querySelectorAll('.imageGalleryImageSmall').forEach(el => el.classList.remove('active'));
+        const activeThumb = document.getElementById(`gallery-img-${i}`);
+        if (activeThumb) activeThumb.classList.add('active');
     }
 
-    let nextDesc = descriptions[images.indexOf(nextSrc)];
+    if (images.length) selectIndex(0);
 
-    changeImage(nextSrc, nextDesc, nextDesc);
-
-    for (let ii = 0; ii < allImgs.length; ii++) {
-        allImgs[ii].classList.remove("active");
+    function nextImage() {
+        const current = document.querySelector('.imageGalleryImageSmall.active');
+        let idx = current ? parseInt(current.dataset.index || '0', 10) : 0;
+        idx = (idx + 1) % images.length;
+        selectIndex(idx);
     }
 
-    document.getElementById(nextDesc).classList.add("active");
-}
-
-document.querySelector(".btnRight").addEventListener("click", function () {
-    nextImage();
-});
-
-function prevImage() {
-    let currentImage = document.querySelector(".active");
-    let curDesc = currentImage.id;
-
-    let curIdx = descriptions.indexOf(curDesc);
-    let prevSrc;
-
-    if (curIdx === 0) {
-        prevSrc = images[images.length - 1];
-    } else {
-        prevSrc = images[curIdx - 1];
+    function prevImage() {
+        const current = document.querySelector('.imageGalleryImageSmall.active');
+        let idx = current ? parseInt(current.dataset.index || '0', 10) : 0;
+        idx = (idx - 1 + images.length) % images.length;
+        selectIndex(idx);
     }
 
-    let prevDesc = descriptions[images.indexOf(prevSrc)];
+    const btnRight = document.querySelector('.btnRight');
+    if (btnRight) btnRight.addEventListener('click', nextImage);
+    const btnLeft = document.querySelector('.btnLeft');
+    if (btnLeft) btnLeft.addEventListener('click', prevImage);
 
-    changeImage(prevSrc, prevDesc, prevDesc);
-
-    for (let ii = 0; ii < allImgs.length; ii++) {
-        allImgs[ii].classList.remove("active");
-    }
-
-    document.getElementById(prevDesc).classList.add("active");
-}
-
-document.querySelector(".btnLeft").addEventListener("click", function () {
-    prevImage();
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'ArrowRight') nextImage();
+        if (e.key === 'ArrowLeft') prevImage();
+    });
 });

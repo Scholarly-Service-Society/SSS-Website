@@ -1,66 +1,34 @@
-let $navRight = $(".navRight");
-
-let links = ["Chapters", "Volunteering", "Founders", "Projects", "Partnerships"];
-let hrefs = ["chapters.html", "volunteering.html", "founders.html", "projects.html", "partnerships.html"];
-
-$navRight.html("");
-
-if (innerWidth > 1250) {
-    let navLinks = document.createElement("div");
-    navLinks.classList.add("navLinks");
-
-    for (let i = 0; i < links.length; i++) {
-        let a = document.createElement("a");
-        a.href = hrefs[i];
-        a.classList.add("navLink");
-        a.innerHTML = links[i];
-        navLinks.append(a);
-    }
-
-    let a = document.createElement("a");
-    a.href = "contact.html";
-    a.classList.add("navLink");
-    a.classList.add("contactLink");
-    a.innerHTML = "Contact Us";
-    navLinks.append(a);
-
-    $navRight.append(navLinks);
-} else {
-    let navBurger = document.createElement("div");
-    navBurger.classList.add("navBurger");
-    navBurger.innerHTML = `<i class = "fas fa-bars"></i>`;
-    $navRight.append(navBurger);
-
-    let navLinksMobile = document.createElement("div");
-    navLinksMobile.classList.add("navLinksMobile");
-
-    for (let i = 0; i < links.length; i++) {
-        let a = document.createElement("a");
-        a.href = hrefs[i];
-        a.classList.add("navLinkMobile");
-        a.innerHTML = links[i];
-        navLinksMobile.append(a);
-    }
-
-    let a = document.createElement("a");
-    a.href = "contact.html";
-    a.classList.add("navLinkMobile");
-    a.classList.add("contactLink");
-    a.innerHTML = "Contact Us";
-    navLinksMobile.append(a);
-
-    $navRight.append(navLinksMobile);
-
-    document.querySelector(".navBurger").addEventListener("click", function () {
-        let navLinksMobile = document.querySelector(".navLinksMobile");
-        if (navLinksMobile.style.display === "none" || navLinksMobile.style.marginLeft == "100vw") {
-            navLinksMobile.style.marginLeft = "0";
-
-            this.innerHTML = `<i class="fa-solid fa-xmark"></i>`
-        } else {
-            navLinksMobile.style.marginLeft = "100vw";
-
-            this.innerHTML = `<i class="fa-solid fa-bars"></i>`
-        }
+window.addEventListener('load', function () {
+    document.querySelectorAll('.nav-link').forEach(function (el) {
+        el.removeAttribute('data-aos');
+        el.classList.remove('fade-up');
+        el.classList.remove('aos-init');
+        el.classList.remove('aos-animate');
+        el.style.opacity = '1';
+        el.style.transform = 'none';
+        el.style.visibility = 'visible';
+        el.style.pointerEvents = 'auto';
     });
-}
+
+    const navLinks = document.querySelectorAll('.nav-link');
+    const obs = new MutationObserver(function (mutations) {
+        mutations.forEach(function (mutation) {
+            const target = mutation.target;
+            if (target && target.classList && target.classList.contains('nav-link')) {
+                if (target.hasAttribute('data-aos')) target.removeAttribute('data-aos');
+                target.classList.remove('aos-init');
+                target.classList.remove('aos-animate');
+                target.style.opacity = '1';
+                target.style.transform = 'none';
+                target.style.visibility = 'visible';
+                target.style.top = '';
+                target.style.left = '';
+                target.style.pointerEvents = 'auto';
+            }
+        });
+    });
+
+    navLinks.forEach(function (el) {
+        obs.observe(el, { attributes: true, attributeFilter: ['style', 'class', 'data-aos'] });
+    });
+});

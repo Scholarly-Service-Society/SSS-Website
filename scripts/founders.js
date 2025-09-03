@@ -1,54 +1,56 @@
-let $foundersContainer = $(".foundersContainer");
+window.addEventListener('load', function() {
+    let $foundersContainer = $(".foundersContainer");
 
-$foundersContainer.empty();
+    $foundersContainer.empty();
 
-let foundersKeys = Object.keys(founders);
+    let foundersKeys = Object.keys(founders);
 
-let founder = document.createElement("div");
-founder.classList.add("founder");
-
-
-for (let i = 0; i < foundersKeys.length; i++) {
     let founder = document.createElement("div");
     founder.classList.add("founder");
 
-    let founderLeft = document.createElement("div");
-    founderLeft.classList.add("founderLeft");
 
-    let founderSubtitle = document.createElement("div");
-    founderSubtitle.classList.add("pageSectionSubtitle");
-    founderSubtitle.classList.add("founderSubtitle");
-    founderSubtitle.innerHTML = founders[foundersKeys[i]].name;
+    for (let i = 0; i < foundersKeys.length; i++) {
+        let founder = document.createElement("div");
+        founder.classList.add("founder");
 
-    let founderDescription = document.createElement("div");
-    founderDescription.classList.add("founderDescription");
-    founderDescription.innerHTML = founders[foundersKeys[i]].description;
+        let founderLeft = document.createElement("div");
+        founderLeft.classList.add("founderLeft");
 
-    founderLeft.append(founderSubtitle);
-    founderLeft.append(founderDescription);
+        let founderSubtitle = document.createElement("div");
+        founderSubtitle.classList.add("pageSectionSubtitle");
+        founderSubtitle.classList.add("founderSubtitle");
+        founderSubtitle.innerHTML = founders[foundersKeys[i]].name;
 
-    let founderRight = document.createElement("div");
-    founderRight.classList.add("founderRight");
+        let founderDescription = document.createElement("div");
+        founderDescription.classList.add("founderDescription");
+        founderDescription.innerHTML = founders[foundersKeys[i]].description;
 
-    let founderImage = document.createElement("img");
-    founderImage.classList.add("founderImage");
-    founderImage.src = founders[foundersKeys[i]].image;
-    founderImage.alt = founders[foundersKeys[i]].name;
+        founderLeft.append(founderSubtitle);
+        founderLeft.append(founderDescription);
 
-    founderRight.append(founderImage);
+        let founderRight = document.createElement("div");
+        founderRight.classList.add("founderRight");
 
-    if (innerWidth < 1250) {
-        founder.append(founderLeft);
-        founder.append(founderRight);
-    } else {
-        if (i === 0) {
+        let founderImage = document.createElement("img");
+        founderImage.classList.add("founderImage");
+        founderImage.src = founders[foundersKeys[i]].image;
+        founderImage.alt = founders[foundersKeys[i]].name;
+
+        founderRight.append(founderImage);
+
+        if (innerWidth < 1250) {
             founder.append(founderLeft);
             founder.append(founderRight);
         } else {
-            founder.append(founderRight);
-            founder.append(founderLeft);
+            if (i === 0) {
+                founder.append(founderLeft);
+                founder.append(founderRight);
+            } else {
+                founder.append(founderRight);
+                founder.append(founderLeft);
+            }
         }
-    }
 
-    $foundersContainer.append(founder);
-}
+        $foundersContainer.append(founder);
+    }
+});

@@ -1,55 +1,75 @@
-let chapterKeys = Object.keys(chapters);
+window.addEventListener('load', function() {
+    let chapterKeys = Object.keys(chapters);
 
-let chaptersContainer = document.querySelector(".chapters");
+    let chaptersContainer = document.querySelector(".chapters");
 
-for (let i = 0; i < chapterKeys.length; i++) {
-    let chapter = chapters[chapterKeys[i]];
+    for (let i = 0; i < chapterKeys.length; i++) {
+        let chapter = chapters[chapterKeys[i]];
 
-    let newChapter = document.createElement("div");
-    newChapter.classList.add("chapter");
-    newChapter.id = chapterKeys[i];
+        let col = document.createElement('div');
+        col.classList.add('col-12', 'col-md-6', 'col-lg-4', 'mb-4');
 
-    let chapterTitle = document.createElement("div");
-    chapterTitle.classList.add("chapterTitle");
-    chapterTitle.textContent = "Scholarly Service Society - " + chapter.name;
+        let card = document.createElement('div');
+        card.classList.add('chapter', 'card', 'h-100');
 
-    newChapter.appendChild(chapterTitle);
+        let cardBody = document.createElement('div');
+        cardBody.classList.add('card-body');
 
-    let chapterLeader = document.createElement("div");
-    chapterLeader.classList.add("chapterSubtitle");
-    chapter.leader.includes(",") ? chapterLeader.textContent = "Chapter Leaders: " + chapter.leader : chapterLeader.textContent = "Chapter Leader: " + chapter.leader
+        let chapterTitle = document.createElement("div");
+        chapterTitle.classList.add("chapterTitle");
+        chapterTitle.textContent = "Scholarly Service Society - " + ((chapter && chapter.name) ? chapter.name : "TBA");
 
-    newChapter.appendChild(chapterLeader);
+        let chapterLeader = document.createElement("div");
+        chapterLeader.classList.add("chapterSubtitle");
+        let leader = (chapter && typeof chapter.leader === 'string') ? chapter.leader.trim() : '';
+        if (leader) {
+            if (leader.includes(",")) {
+                chapterLeader.textContent = "Chapter Leaders: " + leader;
+            } else {
+                chapterLeader.textContent = "Chapter Leader: " + leader;
+            }
+        } else {
+            chapterLeader.textContent = "Chapter Leader: TBA";
+        }
 
-    let chapterFounded = document.createElement("div");
-    chapterFounded.classList.add("chapterFounded");
-    chapterFounded.textContent = "Founded: " + chapter.date;
+        let chapterFounded = document.createElement("div");
+        chapterFounded.classList.add("chapterFounded");
+        chapterFounded.textContent = "Founded: " + (chapter && chapter.date ? chapter.date : "TBD");
 
-    newChapter.appendChild(chapterFounded);
+        let chapterContent = document.createElement("div");
+        chapterContent.classList.add("chapterContent");
 
-    let chapterContent = document.createElement("div");
-    chapterContent.classList.add("chapterContent");
+        let chapterDescription = document.createElement("div");
+        chapterDescription.classList.add("chapterContentText");
+        chapterDescription.textContent = (chapter && chapter.description) ? chapter.description : "";
 
-    let chapterDescription = document.createElement("div");
-    chapterDescription.classList.add("chapterContentText");
-    chapterDescription.textContent = chapter.description;
+        let chapterButtonContainer = document.createElement("div");
+        chapterButtonContainer.classList.add("chapterContentButtonContainer");
 
-    chapterContent.appendChild(chapterDescription);
+        let chapterButton = document.createElement("a");
+        chapterButton.classList.add("chapterContentButton", 'btn', 'btn-sm');
+        if (chapter && chapter.link && chapter.link !== "TBD") {
+            chapterButton.href = chapter.link;
+            chapterButton.textContent = "Join Chapter";
+            chapterButton.target = "_blank";
+        } else {
+            chapterButton.href = "#";
+            chapterButton.textContent = "Coming Soon";
+            chapterButton.classList.add('disabled');
+            chapterButton.setAttribute('aria-disabled','true');
+        }
 
-    let chapterButtonContainer = document.createElement("div");
-    chapterButtonContainer.classList.add("chapterContentButtonContainer");
+        chapterButtonContainer.appendChild(chapterButton);
 
-    let chapterButton = document.createElement("a");
-    chapterButton.classList.add("chapterContentButton");
-    chapterButton.href = chapter.link;
-    chapterButton.textContent = "Join Chapter";
-    chapterButton.target = "_blank";
+        cardBody.appendChild(chapterTitle);
+        cardBody.appendChild(chapterLeader);
+        cardBody.appendChild(chapterFounded);
+        cardBody.appendChild(chapterDescription);
+        cardBody.appendChild(chapterButtonContainer);
 
-    chapterButtonContainer.appendChild(chapterButton);
+        card.appendChild(cardBody);
+        col.appendChild(card);
 
-    chapterContent.appendChild(chapterButtonContainer);
-
-    newChapter.appendChild(chapterContent);
-
-    chaptersContainer.appendChild(newChapter);
-}
+        chaptersContainer.appendChild(col);
+    }
+});
