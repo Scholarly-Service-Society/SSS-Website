@@ -197,6 +197,11 @@
         padding: 8px 10px;
         border-radius: 8px;
     }
+
+    .navLogoImage {
+        width: 70px !important;
+        margin-right: -5px !important;
+    }
 }
 
 @media screen and (max-width: 990px) {

@@ -97,4 +97,8 @@ a.chapterContentButton.btn:hover,
     .chapterContentButton {
         padding: 8px 16px;
     }
+
+    .firstSection {
+        height: min-content !important;
+    }
 }
