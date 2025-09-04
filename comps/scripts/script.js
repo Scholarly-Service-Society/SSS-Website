@@ -22,20 +22,22 @@ document.addEventListener('DOMContentLoaded', function () {
 
     let gbpAmounts = {
         'prize-amount': "275",
-        'prize-1st': "XXX",
-        'prize-2nd': "XXX",
-        'prize-3rd': "XXX",
-        'prize-4th': "XXX",
-        'prize-5th': "XXX",
+        'prize-1st': "75",
+        'prize-2nd': "50",
+        'prize-3rd': "40",
+        'prize-4th': "35",
+        'prize-5th': "25",
+        'prize-6th': "10",
     }
 
     let usdAmounts = {
         'prize-amount': "375",
-        'prize-1st': "XXX",
-        'prize-2nd': "XXX",
-        'prize-3rd': "XXX",
-        'prize-4th': "XXX",
-        'prize-5th': "XXX",
+        'prize-1st': "100",
+        'prize-2nd': "65",
+        'prize-3rd': "55",
+        'prize-4th': "45",
+        'prize-5th': "35",
+        'prize-6th': "15",
     }
 
     function setCurrency(symbol) {
