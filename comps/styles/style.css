@@ -1437,3 +1437,14 @@ footer {
 .signupBtn:hover {
     background-color: var(--mainBlueHover);
 }
+
+.icon-list { display:flex; justify-content:space-around; flex-wrap:wrap; list-style:none; padding:0; margin:40px 0 20px; gap:10px; }
+.icon-list li { text-align:center; max-width:220px; margin:20px 15px; }
+.icon-circle { width:90px; height:90px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:36px; color:#fff; margin:0 auto 15px auto; box-shadow:0 4px 18px rgba(0,0,0,0.12); transition:transform .25s ease; }
+.icon-list li span { display:block; font-weight:700; margin-bottom:6px; font-size:1.05rem; }
+.icon-list li p { font-size:.95rem; line-height:1.4; margin:0; }
+.icon-circle.red { background:#c0392b; } .icon-circle.green { background:#27ae60; } .icon-circle.purple { background:#8e44ad; } .icon-circle.blue { background:#3498db; } .icon-circle.orange { background:#e67e22; } .icon-circle.teal { background:#16a085; }
+.icon-list li:hover .icon-circle { transform:translateY(-4px); }
+@media (max-width:900px){ .icon-circle{width:70px; height:70px; font-size:28px;} .icon-list{margin:24px 0 10px;} .icon-list li{max-width:160px; margin:16px 10px;} .icon-list li span{font-size:1rem;} .icon-list li p{font-size:.85rem;} }
+@media (max-width:500px){ .icon-list li{max-width:140px;} }
+@media (prefers-reduced-motion:reduce){ .icon-circle{transition:none;} }
