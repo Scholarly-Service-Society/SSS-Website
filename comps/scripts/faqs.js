@@ -30,6 +30,14 @@ const faqs = [
     {
         question: "Can I use AI tools in my project?",
         answer: "Yes, but you must acknowledge where and how you used them and your submission must still reflect your own understanding and creativity.",
+    },
+    {
+        question: "What should I do if I encounter technical issues during submission?",
+        answer: "If you encounter any technical issues during submission, please contact us at scholarlyservicesociety@gmail.com",
+    },
+    {
+        question: "Can I edit my submission after it’s been uploaded?",
+        answer: "Once submitted, entries cannot be edited. Please review your submission carefully before finalising."
     }
 ];
 

@@ -237,6 +237,13 @@ let projects = {
             date: "August 4th, 2025",
             location: "Online - Zoom",
             image: "images/projects/london/londonProject4.png"
+        },
+        p5: {
+            title: "Careers in Finance & Audit Talk",
+            description: "Hosted an online talk by a current Chartered Accountant and Lead Audit Manager ay Wells Fargo, discussing careers in Finance, Audit, and Accounting, as well as providing insight into the finance industry",
+            date: "September 5th, 2025",
+            location: "Online - Zoom",
+            image: "images/projects/london/londonProject5.png"
         }
     },
     coh: {
