@@ -63,14 +63,6 @@ let judgesDB = {
         secondaryImg: "images/judges/org/cambridge.jpg",
         linkedin: "https://www.linkedin.com/in/timothee-dusserre-cordonnier-106a512ba/"
     },
-    judge9: {
-        name: "Sophie Allwright",
-        occupation: "1st Year Medicine Student at the University of Cambridge",
-        disciplines: ["Medicine", "Biology", "Chemistry"],
-        mainImg: "images/judges/people/sophie_allwright.jpg",
-        secondaryImg: "images/judges/org/cambridge.jpg",
-        linkedin: "https://www.linkedin.com/in/sophie-allwright/"
-    },
 }
 
 function renderJudges() {
