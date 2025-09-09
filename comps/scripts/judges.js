@@ -63,6 +63,14 @@ let judgesDB = {
         secondaryImg: "images/judges/org/cambridge.jpg",
         linkedin: "https://www.linkedin.com/in/timothee-dusserre-cordonnier-106a512ba/"
     },
+    judge9: {
+        name: "Karthik Sadanand",
+        occupation: "4th Year Medical Student at Emmanuel College, University of Cambridge",
+        disciplines: ["Medicine", "Biology", "Chemistry"],
+        mainImg: "images/judges/people/karthik_sadanand.jpg",
+        secondaryImg: "images/judges/org/cambridge.jpg",
+        linkedin: "https://www.linkedin.com/in/karthik-sadanand-241954211/"
+    },
 }
 
 function renderJudges() {
