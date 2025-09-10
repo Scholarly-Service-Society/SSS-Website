@@ -65,7 +65,7 @@ let judgesDB = {
     },
     judge9: {
         name: "Karthik Sadanand",
-        occupation: "4th Year Medical Student at Emmanuel College, University of Cambridge",
+        occupation: "5th Year Medical Student at Emmanuel College, University of Cambridge",
         disciplines: ["Medicine", "Biology", "Chemistry"],
         mainImg: "images/judges/people/karthik_sadanand.jpg",
         secondaryImg: "images/judges/org/cambridge.jpg",
