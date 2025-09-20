@@ -71,6 +71,14 @@ let judgesDB = {
         secondaryImg: "images/judges/org/cambridge.jpg",
         linkedin: "https://www.linkedin.com/in/karthik-sadanand-241954211/"
     },
+    judge10: {
+        name: "Manav Mahesh",
+        occupation: "2nd Year Medical Student at the University of Cambridge",
+        disciplines: ["Medicine", "Biology", "Chemistry"],
+        mainImg: "images/judges/people/manav_mahesh.jpg",
+        secondaryImg: "images/judges/org/cambridge.jpg",
+        linkedin: "https://www.linkedin.com/in/manav-mahesh-116735276/"
+    },
 }
 
 function renderJudges() {
