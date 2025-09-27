@@ -79,6 +79,14 @@ let judgesDB = {
         secondaryImg: "images/judges/org/cambridge.jpg",
         linkedin: "https://www.linkedin.com/in/manav-mahesh-116735276/"
     },
+    judge11: {
+        name: "Djeya 'Jay' Kaliaraju",
+        occupation: "Clinincal Lead Physiotherapist at the NHS & Pulmonary Rehabilitation Lead",
+        disciplines: ["Medicine", "Physiotherapy"],
+        mainImg: "images/judges/people/jay_kaliaraju.jpg",
+        secondaryImg: "images/judges/org/nhs.png",
+        linkedin: "https://www.linkedin.com/in/djeya-kaliaraju-msc-mcsp-41772020b"
+    },
 }
 
 function renderJudges() {
