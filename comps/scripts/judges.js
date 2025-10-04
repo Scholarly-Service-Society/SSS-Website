@@ -87,6 +87,14 @@ let judgesDB = {
         secondaryImg: "images/judges/org/nhs.png",
         linkedin: "https://www.linkedin.com/in/djeya-kaliaraju-msc-mcsp-41772020b"
     },
+    judge13: {
+        name: "Agastya Kumar",
+        occupation: "1st Year Natural Sciences Undergraduate at the University of Cambridge",
+        disciplines: ["Sciences", "Mathematics", "Physics"],
+        mainImg: "images/judges/people/agastya_kumar.jpeg",
+        secondaryImg: "images/judges/org/cambridge.jpg",
+        linkedin: "https://www.linkedin.com/in/agastya-kumar-2514b2290/"
+    }
 }
 
 function renderJudges() {
