@@ -14,6 +14,105 @@
 </head>
 
 <body>
+    <div class="modal fade show" id="submissionDeadlineModal" tabindex="-1" aria-modal="true" role="dialog"
+        style="display: block; background: rgba(0,0,0,0.5); z-index: 2000;">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content text-center p-4" id="submissionDeadlineModalContent">
+                <div class="modal-header border-0" style = "margin-bottom: -20px;">
+                    <h5 class="modal-title w-100" style="font-weight: bold; font-size: 2.5em;">Submissions Due Soon!</h5>
+                    <button type="button" class="btn-close position-absolute me-2" style = "top: 15px; right: 0;
+                    font-size: 1.5rem;"
+                            aria-label="Close"
+                            id="closeSubmissionModal"></button>
+                </div>
+                <div class="modal-body">
+                    <div id="countdown-timer"
+                        style="font-size: 2rem; font-weight: bold; color: #d9534f;"></div>
+                    <div class="mt-3">Go to the link sent in the email to send your submission before the deadline.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <style>
+        #submissionDeadlineModal {
+            position: fixed;
+            top: 0; left: 0; right: 0; bottom: 0;
+            display: flex !important;
+            align-items: center; justify-content: center;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 2000;
+            opacity: 1; transition: opacity .25s ease;
+        }
+        #submissionDeadlineModal.fade-out { opacity: 0; }
+        #submissionDeadlineModal .modal-dialog { pointer-events: none; }
+        #submissionDeadlineModal .modal-content { pointer-events: auto; }
+        body.modal-open { overflow: hidden; }
+        #closeSubmissionModal { z-index: 10; }
+    </style>
+    <script>
+        (function initSubmissionDeadlinePopup(){
+            const modal = document.getElementById('submissionDeadlineModal');
+            if(!modal) return;
+            const closeBtn = document.getElementById('closeSubmissionModal');
+            const modalContent = document.getElementById('submissionDeadlineModalContent');
+            const timerEl = document.getElementById('countdown-timer');
+
+            const STORAGE_KEY = 'stemSubmissionPopupShown';
+            let storageAllowed = true;
+            try {
+                localStorage.setItem('__popup_test','1');
+                localStorage.removeItem('__popup_test');
+            } catch(e){ storageAllowed = false; }
+
+            if(storageAllowed){
+                const alreadyShown = localStorage.getItem(STORAGE_KEY) === '1';
+                if(alreadyShown){
+                    modal.remove();
+                    return;
+                } else {
+                    localStorage.setItem(STORAGE_KEY, '1');
+                }
+            }
+
+            document.body.classList.add('modal-open');
+
+            const deadline = new Date(Date.UTC(2025, 9, 8, 20, 0, 0)); // 8 Oct 2025 20:00 UTC
+            function updateCountdown(){
+                if(!timerEl) return;
+                const now = new Date();
+                const nowUTC = new Date(now.getTime() + now.getTimezoneOffset()*60000);
+                const diff = deadline - nowUTC;
+                if(diff <= 0){ timerEl.textContent = 'Deadline Passed'; clearInterval(window._submissionDeadlineInterval); return; }
+                const d = Math.floor(diff / 86400000);
+                const h = Math.floor((diff / 3600000) % 24);
+                const m = Math.floor((diff / 60000) % 60);
+                const s = Math.floor((diff / 1000) % 60);
+                let out = (d>0? d + 'd ' : '') + h.toString().padStart(2,'0') + 'h ' + m.toString().padStart(2,'0') + 'm ' + s.toString().padStart(2,'0') + 's';
+                timerEl.textContent = out;
+            }
+            updateCountdown();
+            window._submissionDeadlineInterval = setInterval(updateCountdown, 1000);
+
+            let closed = false;
+            function reallyClose(){
+                if(closed) return; closed = true;
+                clearInterval(window._submissionDeadlineInterval);
+                modal.classList.add('fade-out');
+                modal.setAttribute('aria-hidden','true');
+                document.body.classList.remove('modal-open');
+                modal.addEventListener('transitionend', ()=>{ if(modal && modal.parentNode) modal.parentNode.removeChild(modal); }, { once: true });
+            }
+
+            function shouldCloseByClick(target){
+                return modal && !modalContent.contains(target);
+            }
+
+            if(closeBtn){ closeBtn.addEventListener('click', (e)=>{ e.preventDefault(); reallyClose(); }); }
+            modal.addEventListener('click', (e)=>{ if(shouldCloseByClick(e.target)) reallyClose(); });
+            document.addEventListener('keydown', (e)=>{ if(e.key === 'Escape') reallyClose(); });
+        })();
+    </script>
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
         <div class="navContainer">
             <a class="navbar-brand" href="#mainTop"><strong>STEM Comp</strong></a>
@@ -577,4 +676,3 @@ Statcounter" href="https://statcounter.com/" target="_blank"><img
 </body>
 
 </html>
-
