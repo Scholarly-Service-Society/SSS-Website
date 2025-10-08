@@ -77,7 +77,8 @@
 
             document.body.classList.add('modal-open');
 
-            const deadline = new Date(Date.UTC(2025, 9, 8, 20, 0, 0)); // 8 Oct 2025 20:00 UTC
+            // Change deadline to 10 Oct 2025 20:00 UTC
+            const deadline = new Date(Date.UTC(2025, 9, 10, 20, 0, 0)); // 10 Oct 2025 20:00 UTC
             function updateCountdown(){
                 if(!timerEl) return;
                 const now = new Date();
@@ -427,7 +428,7 @@
                     <div class="timeline-desc">Submissions Open</div>
                 </div>
                 <div class="timeline-event">
-                    <div class="timeline-date">📅 8th October 2025</div>
+                    <div class="timeline-date">📅 10th October 2025</div>
                     <div class="timeline-desc">Submissions Close</div>
                 </div>
                 <div class="timeline-event">
@@ -446,7 +447,7 @@
                 <li>✔ Submit a form of Visual Media presenting your research</li>
                 <li>✔ Include your chosen question, research, and solution</li>
                 <li>✔ Attach a 2000-Character Abstract</li>
-                <li>✔ Deadline: 8th October 2025</li>
+                <li>✔ Deadline: 10th October 2025</li>
             </ol>
         </div>
     </section>
@@ -706,7 +707,7 @@
             const el = document.getElementById('floating-deadline-timer');
             const valueEl = document.getElementById('floating-deadline-timer-value');
             if(!el || !valueEl) return;
-            const deadline = new Date(Date.UTC(2025, 9, 8, 20, 0, 0)); // 8 Oct 2025 20:00 UTC
+            const deadline = new Date(Date.UTC(2025, 9, 10, 20, 0, 0)); // 10 Oct 2025 20:00 UTC
             function format(diff){
                 if(diff <= 0) return 'Deadline Passed';
                 const d = Math.floor(diff / 86400000);
