@@ -15,14 +15,6 @@ let judgesDB = {
         secondaryImg: "images/judges/org/imperial.svg",
         linkedin: "https://www.linkedin.com/in/lasen/"
     },
-    judge3: {
-        name: "Anhad Wasson*",
-        occupation: "2nd Year Mechanical Engineering MEng Student at Imperial College London",
-        disciplines: ["Mechanical Engineering", "Physics"],
-        mainImg: "images/judges/people/anhad_wasson.jpeg",
-        secondaryImg: "images/judges/org/imperial.svg",
-        linkedin: "https://www.linkedin.com/in/anhad-wasson/"
-    },
     judge4: {
         name: "Jonah Boucher",
         occupation: "Managing Director of <a href = 'https://www.leaf.courses/' target = '_blank'>Leaf Courses</a> and Maths Specialist",

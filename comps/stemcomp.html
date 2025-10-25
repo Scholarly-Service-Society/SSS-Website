@@ -14,106 +14,6 @@
 </head>
 
 <body>
-    <div class="modal fade show" id="submissionDeadlineModal" tabindex="-1" aria-modal="true" role="dialog"
-        style="display: block; background: rgba(0,0,0,0.5); z-index: 2000;">
-        <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content text-center p-4" id="submissionDeadlineModalContent">
-                <div class="modal-header border-0" style = "margin-bottom: -20px;">
-                    <h5 class="modal-title w-100" style="font-weight: bold; font-size: 2.5em;">Submissions Due Soon!</h5>
-                    <button type="button" class="btn-close position-absolute me-2" style = "top: 15px; right: 0;
-                    font-size: 1.5rem;"
-                            aria-label="Close"
-                            id="closeSubmissionModal"></button>
-                </div>
-                <div class="modal-body">
-                    <div id="countdown-timer"
-                        style="font-size: 2rem; font-weight: bold; color: #d9534f;"></div>
-                    <div class="mt-3">Go to the link sent in the email to send your submission before the deadline.
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <style>
-        #submissionDeadlineModal {
-            position: fixed;
-            top: 0; left: 0; right: 0; bottom: 0;
-            display: flex !important;
-            align-items: center; justify-content: center;
-            background: rgba(0, 0, 0, 0.5);
-            z-index: 2000;
-            opacity: 1; transition: opacity .25s ease;
-        }
-        #submissionDeadlineModal.fade-out { opacity: 0; }
-        #submissionDeadlineModal .modal-dialog { pointer-events: none; }
-        #submissionDeadlineModal .modal-content { pointer-events: auto; }
-        body.modal-open { overflow: hidden; }
-        #closeSubmissionModal { z-index: 10; }
-    </style>
-    <script>
-        (function initSubmissionDeadlinePopup(){
-            const modal = document.getElementById('submissionDeadlineModal');
-            if(!modal) return;
-            const closeBtn = document.getElementById('closeSubmissionModal');
-            const modalContent = document.getElementById('submissionDeadlineModalContent');
-            const timerEl = document.getElementById('countdown-timer');
-
-            const STORAGE_KEY = 'stemSubmissionPopupShown';
-            let storageAllowed = true;
-            try {
-                localStorage.setItem('__popup_test','1');
-                localStorage.removeItem('__popup_test');
-            } catch(e){ storageAllowed = false; }
-
-            if(storageAllowed){
-                const alreadyShown = localStorage.getItem(STORAGE_KEY) === '1';
-                if(alreadyShown){
-                    modal.remove();
-                    return;
-                } else {
-                    localStorage.setItem(STORAGE_KEY, '1');
-                }
-            }
-
-            document.body.classList.add('modal-open');
-
-            // Change deadline to 10 Oct 2025 20:00 UTC
-            const deadline = new Date(Date.UTC(2025, 9, 10, 20, 0, 0)); // 10 Oct 2025 20:00 UTC
-            function updateCountdown(){
-                if(!timerEl) return;
-                const now = new Date();
-                const nowUTC = new Date(now.getTime() + now.getTimezoneOffset()*60000);
-                const diff = deadline - nowUTC;
-                if(diff <= 0){ timerEl.textContent = 'Deadline Passed'; clearInterval(window._submissionDeadlineInterval); return; }
-                const d = Math.floor(diff / 86400000);
-                const h = Math.floor((diff / 3600000) % 24);
-                const m = Math.floor((diff / 60000) % 60);
-                const s = Math.floor((diff / 1000) % 60);
-                let out = (d>0? d + 'd ' : '') + h.toString().padStart(2,'0') + 'h ' + m.toString().padStart(2,'0') + 'm ' + s.toString().padStart(2,'0') + 's';
-                timerEl.textContent = out;
-            }
-            updateCountdown();
-            window._submissionDeadlineInterval = setInterval(updateCountdown, 1000);
-
-            let closed = false;
-            function reallyClose(){
-                if(closed) return; closed = true;
-                clearInterval(window._submissionDeadlineInterval);
-                modal.classList.add('fade-out');
-                modal.setAttribute('aria-hidden','true');
-                document.body.classList.remove('modal-open');
-                modal.addEventListener('transitionend', ()=>{ if(modal && modal.parentNode) modal.parentNode.removeChild(modal); }, { once: true });
-            }
-
-            function shouldCloseByClick(target){
-                return modal && !modalContent.contains(target);
-            }
-
-            if(closeBtn){ closeBtn.addEventListener('click', (e)=>{ e.preventDefault(); reallyClose(); }); }
-            modal.addEventListener('click', (e)=>{ if(shouldCloseByClick(e.target)) reallyClose(); });
-            document.addEventListener('keydown', (e)=>{ if(e.key === 'Escape') reallyClose(); });
-        })();
-    </script>
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
         <div class="navContainer">
             <a class="navbar-brand" href="#mainTop"><strong>STEM Comp</strong></a>
@@ -125,6 +25,7 @@
                     <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
                     <li class="nav-item"><a class="nav-link" href="#timeline">Timeline</a></li>
                     <li class="nav-item"><a class="nav-link" href="#prizes">Prizes</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#results-2025">2025 Results</a></li>
                     <li class="nav-item"><a class="nav-link" href="#judges">Judging</a></li>
                     <li class="nav-item"><a class="nav-link" href="#faq">FAQs</a></li>
                     <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
@@ -138,11 +39,6 @@
                                 <span class="currency-label">£</span>
                             </div>
                         </div>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link btn btn-primary text-white px-3 py-2"
-                            href="#signup" target="_blank" rel="noopener"
-                            style="border-radius: 0.5rem; font-weight: bold;">Sign Up</a>
                     </li>
                 </ul>
             </div>
@@ -168,9 +64,6 @@
                 <a href="https://scholarlyservicesociety.org/" target="_blank" rel="noopener" title="SSS Logo">
                     <img src="images/logos/sss_logo.JPG" alt="SSS Logo" class="logo">
                 </a>
-                <a href="https://www.instagram.com/ayumedics/" target="_blank" rel="noopener" title="Ayumedics Logo">
-                    <img src="images/logos/ayumedics_logo.jpeg" alt="Ayumedics Logo" class="logo">
-                </a>
             </div>
             <p data-aos="fade-up" class="mainTop-desc" data-aos-delay="200">The Future of STEM: What problem will you
                 try and solve?</p>
@@ -186,10 +79,16 @@
                 to
                 showcase their research and problem-solving skills in addressing pressing global challenges.
                 Participants will chose a question, perform scientific research, and propose an innovative solution,
-                showcasing their findings through visual media. The competition is organised jointy by the <a
-                        href = "https://scholarlyservicesociety.org/" target = "_blank">Scholarly
-                    Service Society</a> (SSS) and <a href = "https://www.instagram.com/ayumedics/" target = "_blank">AyuMedics</a>, supported by <a
-                        href = "https://www.leaf.courses/" target = "_blank">Leaf</a>.
+                showcasing their findings through visual media. The competition is organised by the <a
+                    href="https://scholarlyservicesociety.org/" target="_blank">Scholarly
+                    Service Society</a> (SSS) and supported by <a href="https://www.leaf.courses/"
+                    target="_blank">Leaf</a>.
+
+                <br><br>
+
+                <i>This competition ran in Fall 2025 and is now completed. You can see results and winning
+                    submissions further down the page. Hopefully this competition should be running again in Summer
+                    2026, so watch this page for updates!</i>
             </p>
 
             <div class="about-stages text-center mt-5">
@@ -201,16 +100,22 @@
                             <h4>1. The Problem</h4>
                             <div style="margin-top: -10px"></div>
                             <p>
-                                The first step in a strong submission is choosing the right problem. Some problems are big and urgent, but already receive a lot of attention. Others might be solvable but don’t affect that many people. To help you think carefully, we encourage you to use the ITN framework:</p>
-                                <ul>
-                                    <li>Importance: How big is the problem? How many lives or how much of the planet does it affect?</li>
-                                    <li>Tractability: How solvable is it? Could extra effort or resources actually make progress?</li>
-                                    <li>Neglectedness: How many people are already working on this? If very few, your idea might have more impact.</li>
-                                </ul>
-                                <p>Your submission should explain the problem you’ve chosen and why it matters, drawing
+                                The first step in a strong submission is choosing the right problem. Some problems are
+                                big and urgent, but already receive a lot of attention. Others might be solvable but
+                                don’t affect that many people. To help you think carefully, we encourage you to use the
+                                ITN framework:</p>
+                            <ul>
+                                <li>Importance: How big is the problem? How many lives or how much of the planet does it
+                                    affect?</li>
+                                <li>Tractability: How solvable is it? Could extra effort or resources actually make
+                                    progress?</li>
+                                <li>Neglectedness: How many people are already working on this? If very few, your idea
+                                    might have more impact.</li>
+                            </ul>
+                            <p>Your submission should explain the problem you’ve chosen and why it matters, drawing
                                 on these ITN considerations. This will help judges see that you’ve thought about scale
                                 and impact, not just a familiar or comfortable issue. Below are some links for you
-                                    to get inspiration about current issues:</p>
+                                to get inspiration about current issues:</p>
                             <div style="margin-top: -10px"></div>
                             <ul>
                                 <li><a href="https://www.un.org/en/global-issues" target="_blank" rel="noopener">List of
@@ -231,7 +136,7 @@
                             <div style="margin-top: -10px"></div>
                             <p>Look into an area of STEM of your interest, and research something that can help
                                 solve the problem you selected. This can be, from any part of STEM you like, and you
-                            can get as techincal as you want.</p>
+                                can get as techincal as you want.</p>
                         </div>
                     </div>
                     <div class="timeline-item">
@@ -255,8 +160,12 @@
                     poster, max 3-minute video, leaflet, or 10-slide slideshow. Ensure to include references in any
                     recognisable
                     format.
-                    Additionally, <i>provide a 2000-character abstract</i> summarising your research and proposed solution
-                    . For an example of a form of visual media, we have attached a research poster <a href="images/examples/example-poster.png" target = "_blank">here</a>. This poster, made by students in less time and with a different structure, can give you an idea of how you could present your research.</p>
+                    Additionally, <i>provide a 2000-character abstract</i> summarising your research and proposed
+                    solution
+                    . For an example of a form of visual media, we have attached a research poster <a
+                        href="images/examples/example-poster.png" target="_blank">here</a>. This poster, made by
+                    students in less time and with a different structure, can give you an idea of how you could present
+                    your research.</p>
             </div>
 
             <div data-aos="fade-up-left" data-aos-delay="100">
@@ -276,16 +185,8 @@
             </div>
 
             <div data-aos="fade-up" data-aos-delay="100">
-                <p class="text-center">In order to submit, you must sign up first, following which you will receive an email with further details and the link to submit.</p>
-            </div>
-
-            <div class="text-center my-5" data-aos="fade-up" data-aos-delay="100" id = "signup">
-                <a href = "https://forms.gle/XSZ3SpxReP2ig27S8" rel="noopener" target = "_blank"
-                    class="btn btn-lg btn-primary px-5 py-4 signupBtn"
-                    style="font-size:2rem; font-weight:600; border-radius:1.5rem; box-shadow:0 2px 10px
-                    rgba(0,123,255,0.5); cursor: pointer;">
-                    Sign Up Now (Submissions Open)!
-                </a>
+                <p class="text-center">In order to submit, you must sign up first, following which you will receive an
+                    email with further details and the link to submit.</p>
             </div>
 
             <div style="margin-bottom: -20px"></div>
@@ -303,22 +204,25 @@
                         <button class="accordion-button collapsed d-flex align-items-center" type="button"
                             data-bs-toggle="collapse" data-bs-target="#collapseSSS">
                             <img src="images/logos/sss_logo.JPG" alt="SSS Logo" class="logo me-3"
-                                 style="width:60px;height:60px;object-fit:cover;border-radius:50%;">
+                                style="width:60px;height:60px;object-fit:cover;border-radius:50%;">
                             Scholarly Service Society (SSS)
                         </button>
                     </h2>
                     <div id="collapseSSS" class="accordion-collapse collapse" data-bs-parent="#orgAccordion">
                         <div class="accordion-body">
-                            The <a href = "" target =
-                                "_blank">Scholarly Service Society (SSS)</a>, is a youth-led non-profit organisation
+                            The <a href="" target="_blank">Scholarly Service Society (SSS)</a>, is a youth-led
+                            non-profit organisation
                             that
                             encourages teenagers to get involved in their communities through volunteering and
-                            service. It was founded in early 2024 by two high school students in New Jersey, <a href = "https://www.linkedin.com/in/pahul-virk-46154b2b5/" target =
-                                "_blank">Pahul
-                            Virk</a> and <a href = "https://www.linkedin.com/in/yusuf-dagli-aa1667305/" target =
-                                "_blank">Yusuf Dagli</a>, and since then it has grown to include ten chapters across
+                            service. It was founded in early 2024 by two high school students in New Jersey, <a
+                                href="https://www.linkedin.com/in/pahul-virk-46154b2b5/" target="_blank">Pahul
+                                Virk</a> and <a href="https://www.linkedin.com/in/yusuf-dagli-aa1667305/"
+                                target="_blank">Yusuf Dagli</a>, and since then it has grown to include ten chapters
+                            across
                             six
-                            different countries. The whole idea behind SSS is to inspire young people like us to make a difference, whether this is by helping our local communities or getting involved in meaningful projects.
+                            different countries. The whole idea behind SSS is to inspire young people like us to make a
+                            difference, whether this is by helping our local communities or getting involved in
+                            meaningful projects.
                             <br>
                             <br>
                             The Columbus Chapter of the SSS is the first chapter started by the founders, and runs
@@ -326,18 +230,19 @@
                             orgs in the US to make a bigger impact.
                             <br>
                             <br>
-                            The London chapter of SSS was launched in August 2024 by <a href = "https://www.linkedin.com/in/ishbir-singh/" target =
-                                "_blank">Ishbir Singh</a>
-                                                                                        and <a href = "https://www.linkedin.com/in/tharul-wanni-arachchige-a23362321/" target =
-                                "_blank">Tharul
-                            Wanni Arachchige</a>. The chapter's main events include webinars and online workshops
+                            The London chapter of SSS was launched in August 2024 by <a
+                                href="https://www.linkedin.com/in/ishbir-singh/" target="_blank">Ishbir Singh</a>
+                            and <a href="https://www.linkedin.com/in/tharul-wanni-arachchige-a23362321/"
+                                target="_blank">Tharul
+                                Wanni Arachchige</a>. The chapter's main events include webinars and online workshops
                             rather than
                             cleanups, creating opportunities for young
                             people to connect with each other and also to learn more about the world and life after
                             school.
                             <br>
                             <br>
-                            Overall, we want to play our part in making the world a better place for everyone, whether that means helping the environment or supporting those in need.
+                            Overall, we want to play our part in making the world a better place for everyone, whether
+                            that means helping the environment or supporting those in need.
 
                         </div>
                     </div>
@@ -345,9 +250,9 @@
                 <div class="accordion-item">
                     <h2 class="accordion-header" id="orgLeaf">
                         <button class="accordion-button collapsed d-flex align-items-center" type="button"
-                                data-bs-toggle="collapse" data-bs-target="#collapseLeaf">
+                            data-bs-toggle="collapse" data-bs-target="#collapseLeaf">
                             <img src="images/logos/leaf_logo.jpeg" alt="Leaf Logo" class="logo me-3"
-                                 style="width:60px;height:60px;object-fit:cover;border-radius:50%;">
+                                style="width:60px;height:60px;object-fit:cover;border-radius:50%;">
                             Leaf
                         </button>
                     </h2>
@@ -364,39 +269,39 @@
                         </div>
                     </div>
                 </div>
-                <div class="accordion-item">
-                    <h2 class="accordion-header" id="orgAyumedics">
-                        <button class="accordion-button collapsed d-flex align-items-center" type="button"
-                            data-bs-toggle="collapse" data-bs-target="#collapseAyumedics">
-                            <img src="images/logos/ayumedics_logo.jpeg" alt="Ayumedics Logo" class="logo me-3"
-                                 style="width:60px;height:60px;object-fit:cover;border-radius:50%;">
-                            AyuMedics
-                        </button>
-                    </h2>
-                    <div id="collapseAyumedics" class="accordion-collapse collapse" data-bs-parent="#orgAccordion">
-                        <div class="accordion-body">
-                            <a href = "https://www.instagram.com/ayumedics/" target =
-                                    "_blank">AyuMedics</a> is a passion project
-                               started
-                               by <a href
-                                                                                  ="https://www.linkedin.com/in/naisha-r-kadiveti-734364314/" target = "_blank">Naisha Kadiveti</a>, Diya Narayanan, and
-                         Meghna Narayanan, designed to inspire aspiring medical professionals and provide valuable
-                            guidance through interviews with medical students and healthcare professionals. These
-                            interviews highlight the challenges and rigor of medicine, while also embracing the
-                            opportunities and lessons that are gained from pursuing a career in the field. Through
-                            our platform, viewers gain insight into the wide range of fields within medicine, the
-                            everyday experiences of healthcare providers, and the skills and mindset required to
-                            succeed in the medical profession. Our mission is to bring attention to diverse career
-                            paths and equip future medical students with the knowledge, motivation, and resources to
-                            navigate their own paths successfully. Our content emphasizes not only academic guidance
-                            but also personal development, resilience, and mentorship in the medical field. Our
-                            interviews are accessible on our <a href = "https://www.youtube.com/@AyuMedics2026"
-                                                                target = "_blank">
-                                                                YouTube channel</a>, making it easy for aspiring medical
-                            students to learn from professionals anytime, anywhere.
-                        </div>
-                    </div>
-                </div>
+                <!--                <div class="accordion-item">-->
+                <!--                    <h2 class="accordion-header" id="orgAyumedics">-->
+                <!--                        <button class="accordion-button collapsed d-flex align-items-center" type="button"-->
+                <!--                            data-bs-toggle="collapse" data-bs-target="#collapseAyumedics">-->
+                <!--                            <img src="images/logos/ayumedics_logo.jpeg" alt="Ayumedics Logo" class="logo me-3"-->
+                <!--                                 style="width:60px;height:60px;object-fit:cover;border-radius:50%;">-->
+                <!--                            AyuMedics-->
+                <!--                        </button>-->
+                <!--                    </h2>-->
+                <!--                    <div id="collapseAyumedics" class="accordion-collapse collapse" data-bs-parent="#orgAccordion">-->
+                <!--                        <div class="accordion-body">-->
+                <!--                            <a href = "https://www.instagram.com/ayumedics/" target =-->
+                <!--                                    "_blank">AyuMedics</a> is a passion project-->
+                <!--                               started-->
+                <!--                               by <a href-->
+                <!--                                                                                  ="https://www.linkedin.com/in/naisha-r-kadiveti-734364314/" target = "_blank">Naisha Kadiveti</a>, Diya Narayanan, and-->
+                <!--                         Meghna Narayanan, designed to inspire aspiring medical professionals and provide valuable-->
+                <!--                            guidance through interviews with medical students and healthcare professionals. These-->
+                <!--                            interviews highlight the challenges and rigor of medicine, while also embracing the-->
+                <!--                            opportunities and lessons that are gained from pursuing a career in the field. Through-->
+                <!--                            our platform, viewers gain insight into the wide range of fields within medicine, the-->
+                <!--                            everyday experiences of healthcare providers, and the skills and mindset required to-->
+                <!--                            succeed in the medical profession. Our mission is to bring attention to diverse career-->
+                <!--                            paths and equip future medical students with the knowledge, motivation, and resources to-->
+                <!--                            navigate their own paths successfully. Our content emphasizes not only academic guidance-->
+                <!--                            but also personal development, resilience, and mentorship in the medical field. Our-->
+                <!--                            interviews are accessible on our <a href = "https://www.youtube.com/@AyuMedics2026"-->
+                <!--                                                                target = "_blank">-->
+                <!--                                                                YouTube channel</a>, making it easy for aspiring medical-->
+                <!--                            students to learn from professionals anytime, anywhere.-->
+                <!--                        </div>-->
+                <!--                    </div>-->
+                <!--                </div>-->
             </div>
         </div>
     </section>
@@ -461,9 +366,9 @@
                 <div class="step-group">
                     <div class="step-info">
                         <div class="step-label"><b>4th
-                                Place</b><br><small><b style = "font-size: 18px;"><span class="currency">$</span><span
-                                id="prize-4th">XXX
-                        </span></b> +
+                                Place</b><br><small><b style="font-size: 18px;"><span class="currency">£</span><span
+                                        id="prize-4th">35
+                                    </span></b> +
                                 Mentorship</small></div>
                         <div class="step fourth"></div>
                     </div>
@@ -471,9 +376,9 @@
                 <div class="step-group">
                     <div class="step-info">
                         <div class="step-label">🥈 <b>2nd
-                                Place</b><br><small><b style = "font-size: 20px;"><span class="currency">$</span><span
-                                id="prize-2nd">XXX
-                        </span></b>,
+                                Place</b><br><small><b style="font-size: 20px;"><span class="currency">£</span><span
+                                        id="prize-2nd">50
+                                    </span></b>,
                                 Mentorship, Direct Entry to 2026
                                 Leaf Finalist Cohort</small></div>
                         <div class="step second"></div>
@@ -482,9 +387,9 @@
                 <div class="step-group">
                     <div class="step-info">
                         <div class="step-label">🥇 <b>1st
-                                Place</b><br><small><b style = "font-size: 20px;"><span class="currency">$</span><span
-                                id="prize-1st">XXX
-                        </span></b>,
+                                Place</b><br><small><b style="font-size: 20px;"><span class="currency">£</span><span
+                                        id="prize-1st">75
+                                    </span></b>,
                                 Mentorship, Direct Entry to 2026
                                 Leaf Finalist Cohort</small></div>
                         <div class="step first"></div>
@@ -493,9 +398,9 @@
                 <div class="step-group">
                     <div class="step-info">
                         <div class="step-label">🥉 <b>3rd
-                                Place</b><br><small><b style = "font-size: 20px;"><span class="currency">$</span><span
-                                id="prize-3rd">XXX
-                        </span></b>,
+                                Place</b><br><small><b style="font-size: 20px;"><span class="currency">£</span><span
+                                        id="prize-3rd">40
+                                    </span></b>,
                                 Mentorship, Direct Entry to 2026
                                 Leaf Finalist Cohort</small></div>
                         <div class="step third"></div>
@@ -504,9 +409,9 @@
                 <div class="step-group">
                     <div class="step-info">
                         <div class="step-label"><b>5th
-                                Place</b><br><small><b style = "font-size: 20px;"><span class="currency">$</span><span
-                                id="prize-5th">XXX
-                        </span></b> +
+                                Place</b><br><small><b style="font-size: 20px;"><span class="currency">£</span><span
+                                        id="prize-5th">25
+                                    </span></b> +
                                 Mentorship</small></div>
                         <div class="step fifth"></div>
                     </div>
@@ -515,8 +420,7 @@
             <div class="other-prizes mt-5" data-aos="fade-up" data-aos-delay="200">
                 <div class="text-center">
                     <h4>6th–10th Place</h4>
-                    <p><b
-                            style = "font-size: 20px;"><span class="currency">$</span><span id="prize-6th">XXX</span></b> &
+                    <p><b style="font-size: 20px;"><span class="currency">£</span><span id="prize-6th">10</span></b> &
                         Mentorship
                         by a
                         professional in
@@ -524,13 +428,61 @@
                 </div>
                 <div class="text-center mt-4">
                     <h4>Participation</h4>
-                    <p>All participants will receive a Certificate of Participation. Addtionally, all entries will
-                        be considered for publishing in
-                        <a href = "https://www.thequarters.xyz/" target = "_blank">The Quarters</a>, a monthly
-                        newsletter with
-                        over 200 monthly readers.</p>
+                    <p>All participants will receive a Certificate of Participation. Addtionally, all entries will be
+                        considered for publishing in
+                        <a href="https://www.thequarters.xyz/" target="_blank">The Quarters</a>, a monthly newsletter
+                        with over 200 monthly readers.</p>
                 </div>
             </div>
+        </div>
+    </section>
+
+    <section id="results-2025" class="py-5 bg-white">
+        <div class="shape shape-results2"></div>
+        <div class="container" data-aos="fade-up">
+            <h2 class="text-center mb-4">2025 Results</h2>
+
+            <h3 class="text-center mb-4">Top 10</h3>
+
+            <div class="top10-container" style="margin:1.5rem 0;">
+                <div class="top10-scroll"
+                    style="overflow-x:auto; -webkit-overflow-scrolling:touch; scroll-snap-type:x mandatory;">
+                    <div id="top10-list" style="display:flex;gap:1rem;padding:8px 6px;align-items:stretch;">
+                    </div>
+                </div>
+            </div>
+
+            <hr style="margin:2.5rem 0;">
+
+            <h3 class="text-center mb-3">Special Awards</h3>
+            <div id="special-awards-list" class="special-awards"
+                style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1rem;">
+
+            </div>
+
+            <hr style="margin:2.5rem 0;">
+
+            <h3 class="text-center mb-3">Honorable Mentions</h3>
+            <div id="honourable-list" class="honourable-list"
+                style="display:flex;gap:1rem;flex-wrap:wrap;justify-content:center;">
+
+            </div>
+
+            <div id="results-resources" class="results-resources text-center mt-4">
+                <hr style="margin:1.5rem 0;">
+                <h3 class="mb-3">Results Resources</h3>
+                <p class="mb-0">See the results powerpoint or watch the meeting:</p>
+                <p style="margin-top:8px;">
+                    <a id="results-powerpoint"
+                        href="https://docs.google.com/presentation/d/1BQVzCZ7U-EkQN-L5RHRgM4wll6iCFRNd8P0RCVWk8RQ/edit?usp=sharing"
+                        target="_blank" rel="noopener" aria-label="Download results powerpoint">View Results
+                        PowerPoint</a>
+                    &nbsp;|&nbsp;
+                    <a id="results-recording" href="#" target="_blank" rel="noopener"
+                        aria-label="Watch recording of results meeting">Watch Recording of Results Meeting</a>
+                </p>
+            </div>
+
         </div>
     </section>
 
@@ -542,7 +494,8 @@
         <div class="container">
             <h2 class="text-center mb-5" data-aos="fade-up">Judging</h2>
             <h3 class="text-center mb-5" data-aos="fade-up">Judges</h3>
-            <p style = "text-align: center; margin-top: -30px; margin-bottom: 30px;" data-aos="fade-up">Below you can see the judges that
+            <p style="text-align: center; margin-top: -30px; margin-bottom: 30px;" data-aos="fade-up">Below you can see
+                the judges that
                 make
                 up our
                 judging
@@ -586,36 +539,36 @@
             <p data-aos="fade-up" style="margin-top: -30px;">Your submission will be judged on the following
                 aspects:</p>
             <ul class="icon-list" data-aos="fade-up">
-              <li>
-                <div class="icon-circle red"><i class="fas fa-exclamation-circle" aria-hidden="true"></i></div>
-                <span>Problem Identification</span>
-                <p>The importance and relevance of your issue and your explanation of why it matters.</p>
-              </li>
-              <li>
-                <div class="icon-circle green"><i class="fas fa-book" aria-hidden="true"></i></div>
-                <span>Research</span>
-                <p>Engagement with high-quality, relevant sources, and how deep you go into it.</p>
-              </li>
-              <li>
-                <div class="icon-circle purple"><i class="fas fa-lightbulb" aria-hidden="true"></i></div>
-                <span>Innovation</span>
-                <p>Originality and creativity of your solution.</p>
-              </li>
-              <li>
-                <div class="icon-circle blue"><i class="fas fa-cogs" aria-hidden="true"></i></div>
-                <span>Feasibility</span>
-                <p>How feasible your solution is, taking constraints into mind.</p>
-              </li>
-              <li>
-                <div class="icon-circle orange"><i class="fas fa-flask" aria-hidden="true"></i></div>
-                <span>Accuracy &amp; Technicality</span>
-                <p>How scientifically sound your research is, along with how technical it is.</p>
-              </li>
-              <li>
-                <div class="icon-circle teal"><i class="fas fa-comments" aria-hidden="true"></i></div>
-                <span>Communication &amp; Presentation</span>
-                <p>How clearly you have presented your research in a professional and engaging way.</p>
-              </li>
+                <li>
+                    <div class="icon-circle red"><i class="fas fa-exclamation-circle" aria-hidden="true"></i></div>
+                    <span>Problem Identification</span>
+                    <p>The importance and relevance of your issue and your explanation of why it matters.</p>
+                </li>
+                <li>
+                    <div class="icon-circle green"><i class="fas fa-book" aria-hidden="true"></i></div>
+                    <span>Research</span>
+                    <p>Engagement with high-quality, relevant sources, and how deep you go into it.</p>
+                </li>
+                <li>
+                    <div class="icon-circle purple"><i class="fas fa-lightbulb" aria-hidden="true"></i></div>
+                    <span>Innovation</span>
+                    <p>Originality and creativity of your solution.</p>
+                </li>
+                <li>
+                    <div class="icon-circle blue"><i class="fas fa-cogs" aria-hidden="true"></i></div>
+                    <span>Feasibility</span>
+                    <p>How feasible your solution is, taking constraints into mind.</p>
+                </li>
+                <li>
+                    <div class="icon-circle orange"><i class="fas fa-flask" aria-hidden="true"></i></div>
+                    <span>Accuracy &amp; Technicality</span>
+                    <p>How scientifically sound your research is, along with how technical it is.</p>
+                </li>
+                <li>
+                    <div class="icon-circle teal"><i class="fas fa-comments" aria-hidden="true"></i></div>
+                    <span>Communication &amp; Presentation</span>
+                    <p>How clearly you have presented your research in a professional and engaging way.</p>
+                </li>
             </ul>
             <p data-aos="fade-up" style="margin-top: -10px;">After the results are released, you will also be
                 provided anonymised feedback from the judges that
@@ -630,8 +583,8 @@
             <h2 class="text-center mb-4">Frequently Asked Questions</h2>
             <div class="accordion" id="faqAccordion">
             </div>
-         </div>
-     </section>
+        </div>
+    </section>
     <section id="contact" class="py-5 bg-light">
         <div class="shape shape-contact2"></div>
         <div class="shape shape-contact"></div>
@@ -643,7 +596,7 @@
     </section>
 
     <footer>
-        Website by&nbsp;<a href = "https://www.linkedin.com/in/ishbir-singh/" target = "_blank" style = "color:
+        Website by&nbsp;<a href="https://www.linkedin.com/in/ishbir-singh/" target="_blank" style="color:
         var(--text)">Ishbir Singh</a>
     </footer>
 
@@ -653,6 +606,7 @@
     <script src="scripts/faqs.js"></script>
     <script src="scripts/script.js" async></script>
     <script src="scripts/navbar.js"></script>
+    <script src="./scripts/results.js"></script>
     <script>
         AOS.init({
             duration: 1000,
@@ -660,87 +614,20 @@
         });
     </script>
 
-    <div id="floating-deadline-timer" role="status" aria-live="polite" aria-label="Time until submissions deadline">
-        <span class="fdt-label">Due In</span>
-        <span class="fdt-time" id="floating-deadline-timer-value"></span>
-    </div>
-    <style>
-        #floating-deadline-timer {
-            position: fixed;
-            bottom: 18px;
-            right: 18px;
-            background: #1f1f1f;
-            color: #fff;
-            padding: 10px 14px 8px;
-            border-radius: 14px;
-            font-family: inherit;
-            font-size: 1.1rem;
-            font-weight: 600;
-            box-shadow: 0 4px 14px rgba(0,0,0,.28);
-            z-index: 1800;
-            line-height: 1.1;
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start;
-            min-width: 120px;
-            backdrop-filter: blur(4px);
-        }
-        #floating-deadline-timer .fdt-label {
-            font-size: 0.85rem;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-            opacity: .75;
-            margin-bottom: 2px;
-        }
-        #floating-deadline-timer .fdt-time {
-            font-size: 1.25rem;
-            letter-spacing: .5px;
-            white-space: nowrap;
-        }
-        @media (max-width: 600px){
-            #floating-deadline-timer { bottom: 12px; right: 12px; padding: 8px 12px 7px; }
-            #floating-deadline-timer .fdt-time { font-size: 0.85rem; }
-        }
-    </style>
-    <script>
-        (function initFloatingDeadlineTimer(){
-            const el = document.getElementById('floating-deadline-timer');
-            const valueEl = document.getElementById('floating-deadline-timer-value');
-            if(!el || !valueEl) return;
-            const deadline = new Date(Date.UTC(2025, 9, 10, 20, 0, 0)); // 10 Oct 2025 20:00 UTC
-            function format(diff){
-                if(diff <= 0) return 'Deadline Passed';
-                const d = Math.floor(diff / 86400000);
-                const h = Math.floor((diff / 3600000) % 24);
-                const m = Math.floor((diff / 60000) % 60);
-                const s = Math.floor((diff / 1000) % 60);
-                return (d>0? d + 'd ' : '') + h.toString().padStart(2,'0') + 'h ' + m.toString().padStart(2,'0') + 'm ' + s.toString().padStart(2,'0') + 's';
-            }
-            function tick(){
-                const now = new Date();
-                const diff = deadline - now;
-                const out = format(diff);
-                valueEl.textContent = out;
-                if(diff <= 0){ clearInterval(window._floatingDeadlineInterval); }
-            }
-            tick();
-            window._floatingDeadlineInterval = setInterval(tick, 1000);
-        })();
-    </script>
-
-<!-- Default Statcounter code for STEM Comp
+    <!-- Default Statcounter code for STEM Comp
     https://scholarlyservicesociety.org/comps/stemcomp.html -->
     <script type="text/javascript">
-        var sc_project=13164954;
-        var sc_invisible=1;
-        var sc_security="67f10ddb";
+        var sc_project = 13164954;
+        var sc_invisible = 1;
+        var sc_security = "67f10ddb";
     </script>
-    <script type="text/javascript"
-            src="https://www.statcounter.com/counter/counter.js" async></script>
-    <noscript><div class="statcounter"><a title="Web Analytics Made Easy -
-Statcounter" href="https://statcounter.com/" target="_blank"><img
-            class="statcounter" src="https://c.statcounter.com/13164954/0/67f10ddb/1/"
-            referrerPolicy="no-referrer-when-downgrade"></a></div></noscript>
+    <script type="text/javascript" src="https://www.statcounter.com/counter/counter.js" async></script>
+    <noscript>
+        <div class="statcounter"><a title="Web Analytics Made Easy -
+Statcounter" href="https://statcounter.com/" target="_blank"><img class="statcounter"
+                    src="https://c.statcounter.com/13164954/0/67f10ddb/1/"
+                    referrerPolicy="no-referrer-when-downgrade"></a></div>
+    </noscript>
     <!-- End of Statcounter Code -->
 </body>
 
