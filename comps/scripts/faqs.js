@@ -9,7 +9,7 @@ const faqs = [
     },
     {
         question: "What do I need to submit?",
-        answer: "You must submit a form of visual media, such as a poster, max 3-minute video, or slideshow showcasing the problem you are addressing, your research, and your proposed solution. You must also include references in any recognisable format. This can be submitted to the Google form along with a 300-word abstract summarising your research."
+        answer: "You must submit a form of visual media, such as a poster, max 3-minute video, or slideshow showcasing the problem you are addressing, your research, and your proposed solution. You must also include references in any recognisable format. This can be submitted to the Google form along with a 2000-character abstract summarising your research."
     },
     {
         question: "Can I work in a team?",
