@@ -68,6 +68,13 @@ let chapters = {
         description: "The Scholarly Service Society - Turkey Chapter is the 10th SSS Chapter, now taking the SSS mission to the other side of the globe in Turkey. This expansion really highlights the global range of the SSS impact, as the organisation has now managed to end up in a 4th country.",
         link: "TBD",
         date: "June 2025",
+    },
+    enj: {
+        name: "Edison, NJ, USA",
+        leader: "Kushman Kaur, Sukhpreet Kaur",
+        description: "The Scholarly Service Society - Edison, New Jersey Chapter is the 11th established SSS Chapter and now the 5th Chapter from New Jersey, allowing the organisation to continue fostering cleaner, safer, and more educated communities through the power volunteerism, and deepening the SSS impact in New Jersey.",
+        link: "TBD",
+        date: "June 2025",
     }
 }
 
