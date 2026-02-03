@@ -61,6 +61,14 @@ window.addEventListener('load', function() {
 
         chapterButtonContainer.appendChild(chapterButton);
 
+        if (chapterKeys[i] === 'luk') {
+            let londonPageLink = document.createElement('a');
+            londonPageLink.classList.add('chapterContentButton', 'btn', 'btn-sm');
+            londonPageLink.href = (chapter && chapter.page) ? chapter.page : 'chapters/london.html';
+            londonPageLink.textContent = 'View London Page';
+            chapterButtonContainer.appendChild(londonPageLink);
+        }
+
         cardBody.appendChild(chapterTitle);
         cardBody.appendChild(chapterLeader);
         cardBody.appendChild(chapterFounded);

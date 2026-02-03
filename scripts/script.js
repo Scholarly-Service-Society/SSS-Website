@@ -251,6 +251,13 @@ let projects = {
             date: "September 5th, 2025",
             location: "Online - Zoom",
             image: "images/projects/london/londonProject5.png"
+        },
+        ps: {
+            title: "Futures in STEM Competition",
+            description: "Organized the 'Futures in STEM' Competition, engaging 40 students from around the world to do research in areas of their interest, linking future issues with innovation. Had £275 in prizes, an expert judging panel, and were sponsored by <a href = 'https://leaf.courses/' target = '_blank'>Leaf</a>. See details <a href = 'https://scholarlyservicesociety.org/comps/stemcomp.html' target = '_blank'>here</a>.",
+            date: "6th September to 25th October, 2025",
+            location: "Online",
+            image: "images/projects/london/londonStemComp.png"
         }
     },
     coh: {
@@ -299,6 +306,9 @@ let projects = {
     }
 }
 
+window.projects = projects;
+window.chapters = chapters;
+
 let founders = {
     psv: {
         name: "Pahul Singh Virk",
@@ -313,3 +323,52 @@ let founders = {
         image: "images/founders/Yusuf Dagli.jpeg"
     },
 }
+
+window.londonChapterTeam = {
+    leaders: [
+        {
+            name: "Ishbir Singh",
+            title: "Co-Founder",
+            description: "Co-leads the London Chapter, organizing online talks and workshops and supporting chapter growth.",
+            linkedin: "https://www.linkedin.com/in/ishbir-singh/",
+            image: "images/chapters/london/ishbir-singh.jpeg"
+        },
+        {
+            name: "Tharul Wanni Arachchige",
+            title: "Co-Founder",
+            description: "Co-leads the London Chapter, coordinating events and partnerships to expand impact across the UK.",
+            linkedin: "https://www.linkedin.com/in/tharul-wanni-arachchige-a23362321/",
+            image: "images/chapters/london/tharul-wanni-arachchige.jpeg"
+        }
+    ],
+    members: [
+        {
+            name: "",
+            title: "Outreach Manager",
+            description: "Promotes events, grows the community, and helps new members get involved.",
+            linkedin: "",
+            image: "images/chapters/london/outreach-manager.svg"
+        },
+        {
+            name: "",
+            title: "Events Coordinator",
+            description: "Plans and coordinates online talks and workshops, managing speakers and timelines.",
+            linkedin: "",
+            image: "images/chapters/london/events-coordinator.svg"
+        },
+        {
+            name: "",
+            title: "Partnerships Coordinator",
+            description: "Builds partnerships with organizations and mentors and maintains ongoing collaborations.",
+            linkedin: "",
+            image: "images/chapters/london/partnerships-coordinator.svg"
+        },
+        {
+            name: "",
+            title: "Graphics Designer",
+            description: "Creates event graphics, templates, and brand assets for London Chapter communications.",
+            linkedin: "",
+            image: "images/chapters/london/graphics-designer.svg"
+        }
+    ]
+};
