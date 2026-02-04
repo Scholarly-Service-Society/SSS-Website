@@ -68,8 +68,17 @@
         }
 
         .memberGrid {
-            width: 100%;
-            box-sizing: border-box;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 18px;
+            margin-top: 22px;
+            justify-content: center;
+            align-items: stretch;
+        }
+
+        /* Each member card is an individual object in the wrap layout */
+        .memberGrid .memberCard {
+            flex: 0 1 250px;
         }
 
         .pageSectionContent.projectsContainer {
@@ -91,12 +100,17 @@
         }
 
         .pageSection.midSection {
-            padding-top: 68px;
+            padding-top: 35px;
             padding-bottom: 34px;
         }
 
         .pageSectionTitle {
             margin-bottom: 14px;
+        }
+
+        /* Team section: slightly tighter spacing under the title */
+        .pageSection.midSection .pageSectionTitle {
+            margin-bottom: 6.5px;
         }
 
         .pageSectionContentText {
@@ -185,10 +199,17 @@
         }
 
         .memberGrid {
-            display: grid;
-            grid-template-columns: repeat(4, minmax(0, 1fr));
+            display: flex;
+            flex-wrap: wrap;
             gap: 18px;
             margin-top: 22px;
+            justify-content: center;
+            align-items: stretch;
+        }
+
+        /* Each member card is an individual object in the wrap layout */
+        .memberGrid .memberCard {
+            flex: 0 1 250px;
         }
 
         .memberCard {
@@ -203,6 +224,12 @@
             border: 1px solid rgba(59, 39, 29, 0.08);
             backdrop-filter: blur(10px);
             position: relative;
+
+            /* Cap card width so member image cards don't get too wide */
+            max-width: 250px;
+            width: 100%;
+            margin-left: auto;
+            margin-right: auto;
         }
 
         .memberLeft {
@@ -221,6 +248,9 @@
             border-radius: 18px;
             object-fit: contain;
             background: var(--midLight);
+
+            /* Extra safety: don't allow the image itself to exceed the card cap */
+            max-width: 250px;
         }
 
         .memberName {
@@ -262,23 +292,6 @@
             margin-bottom: 8px;
         }
 
-        #projectsDesc {
-            margin-bottom: 8px;
-            display: block !important;
-            visibility: visible !important;
-            opacity: 1 !important;
-            height: auto !important;
-            overflow: visible !important;
-        }
-
-        #projectsContainer {
-            margin-top: 0;
-        }
-
-        #projectsContainer .projects {
-            margin-top: 0;
-        }
-
         .projectImage {
             width: 200px;
             height: auto;
@@ -294,11 +307,20 @@
             font-size: 16px;
         }
 
-        @media screen and (max-width: 1250px) {
-            .memberGrid {
-                grid-template-columns: repeat(2, minmax(0, 1fr));
-            }
+        /* Projects section: keep title/desc at the very top and above any project cards */
+        .pageSection.projectsSection {
+            padding-top: 35px;
+        }
 
+        /* Projects description should always be visible */
+        .pageSection.projectsSection #projectsDesc {
+            display: block;
+            visibility: visible;
+            opacity: 1;
+            transform: none;
+        }
+
+        @media screen and (max-width: 1250px) {
             .project {
                 width: 100%;
                 margin-left: 0;
@@ -341,10 +363,6 @@
             .cardLinkedIn i {
                 font-size: 20px;
             }
-
-            .memberGrid {
-                grid-template-columns: repeat(2, minmax(0, 1fr));
-            }
         }
 
         @media screen and (max-width: 720px) {
@@ -362,8 +380,8 @@
             }
 
             .pageSection.midSection {
-                padding-top: 50px;
-                padding-bottom: 26px;
+                padding-top: 35px;
+                padding-bottom: 34px;
             }
 
             .leadersGrid {
@@ -414,10 +432,6 @@
                 font-size: 19px;
             }
 
-            .memberGrid {
-                grid-template-columns: 1fr;
-            }
-
             .memberCard {
                 grid-template-columns: 130px 1fr;
                 grid-template-rows: auto;
@@ -462,6 +476,15 @@
             .projectDate,
             .projectLocation {
                 font-size: 14px;
+            }
+
+            /* On mobile, member cards can be wider */
+            .memberGrid .memberCard {
+                flex-basis: 320px;
+            }
+
+            .memberCard {
+                max-width: 340px;
             }
         }
     </style>
@@ -518,16 +541,16 @@
 
     <div class="pageSection midSection">
         <div class="sectionInner">
-            <div class="pageSectionTitle" data-aos="fade-up">Team</div>
-            <div class="pageSectionContentText" data-aos="fade-up">Meet the people behind the London Chapter.</div>
+            <div class="pageSectionTitle">Team</div>
+            <div class="pageSectionContentText">Meet the people behind the London Chapter.</div>
             <div class="memberGrid" id="memberGrid"></div>
         </div>
     </div>
 
-    <div class="pageSection">
+    <div class="pageSection projectsSection">
         <div class="sectionInner">
-            <div class="pageSectionTitle" data-aos="fade-up" id="projectsTitle">Projects</div>
-            <div class="pageSectionContentText" data-aos="fade-up" id="projectsDesc">Recent talks, workshops, and initiatives organized by the London Chapter.</div>
+            <div class="pageSectionTitle" id="projectsTitle">Projects</div>
+            <div class="pageSectionContentText" id="projectsDesc">Recent talks, workshops, and initiatives organized by the London Chapter.</div>
             <div class="pageSectionContent projectsContainer" id="projectsContainer">
                 <div class="projects" id="londonProjects"></div>
             </div>
@@ -708,7 +731,8 @@
             return project;
         }
 
-        document.addEventListener('DOMContentLoaded', function () {
+        // Run after all deferred scripts are guaranteed to have executed.
+        window.addEventListener('load', function () {
             var team = window.londonChapterTeam;
             if (team && team.leaders && team.leaders.length) {
                 var leadersGrid = document.getElementById('leadersGrid');
@@ -745,7 +769,8 @@
                 return;
             }
 
-            for (var k = 0; k < keys.length; k++) {
+            // Most recent projects are last in the object; render last -> first.
+            for (var k = keys.length - 1; k >= 0; k--) {
                 container.appendChild(createProjectCard(items[keys[k]]));
             }
         });
@@ -753,3 +778,6 @@
 </body>
 
 </html>
+
+
+
