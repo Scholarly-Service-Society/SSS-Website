@@ -329,46 +329,61 @@ window.londonChapterTeam = {
         {
             name: "Ishbir Singh",
             title: "Co-Founder",
-            description: "Co-leads the London Chapter, organizing online talks and workshops and supporting chapter growth.",
+            description: "Ishbir is a Year 13 student studying A-Level Mathematics, Further Mathematics, Physics, and Computer Science. He aspires to study Mathematics and Computer Science at university and pursue a career in quantitative research. In August 2024, he co-founded the London Chapter and has since led its growth, organising talks and competitions whilst developing partnerships with the ultimate goal of creating meaningful opportunities for students to showcase their skills, explore pathways, and engage with their interests.",
             linkedin: "https://www.linkedin.com/in/ishbir-singh/",
-            image: "images/chapters/london/ishbir-singh.jpeg"
+            image: "images/chapters/london/ishbir_singh.jpeg"
         },
         {
             name: "Tharul Wanni Arachchige",
             title: "Co-Founder",
-            description: "Co-leads the London Chapter, coordinating events and partnerships to expand impact across the UK.",
+            description: "Tharul is in Year 13 studying Maths, Further Maths, Physics, and Computer Science at A-Level, aspiring to study Maths at University. He co-founded the London Chapter alongside Ishbir and has since helped lead its growth, including coordinating events and building partnerships to work towards the goal of creating opportunities and building a community centered around growth and opportunity.",
             linkedin: "https://www.linkedin.com/in/tharul-wanni-arachchige-a23362321/",
-            image: "images/chapters/london/tharul-wanni-arachchige.jpeg"
+            image: "images/chapters/london/tharul_wanni_arachchige.jpeg"
         }
     ],
     members: [
         {
-            name: "",
+            name: "Alesia Caraba",
             title: "Outreach Manager",
-            description: "Promotes events, grows the community, and helps new members get involved.",
-            linkedin: "",
-            image: "images/chapters/london/outreach-manager.svg"
+            description: "Alesia is currently in Year 12 studying Economics, Politics, and Business, looking to go into marketing in the future, and is also active with the cadets. As an outreach maneger for SSS London, she will help increase awareness of the chapter and its events, as well as help connect students with opportunities to get involved.",
+            linkedin: "https://www.linkedin.com/in/alesia-stephanie-caraba-b56350382/",
+            image: "images/chapters/london/alesia_caraba.jpg"
         },
         {
-            name: "",
+            name: "Ronit Jaisinghani",
+            title: "Outreach Manager",
+            description: "Ronit is a Year 12 student currently studying Mathematics, Further Mathematics, Physics, and Business. With a strong interest in analytical problem-solving, he hopes to pursue a career in the financial sector. As Outreach Manager for SSS London, he is focused on expanding engagement, increasing awareness, and helping connect students with valuable opportunities.",
+            linkedin: "https://www.linkedin.com/in/ronit-jaisinghani-268b41297/",
+            image: "images/chapters/london/ronit_jaisinghani.png"
+        },
+        {
+            name: "Diya Badri Anand",
+            title: "Graphic Designer",
+            description: "Diya is in Year 13 studying Maths, Physics, Art and German at A-Level, aspiring to study architecture at university. As the Graphic Designer for SSS London, she is responsible for creating visual content for the chapter, including social media graphics, event flyers, and promotional materials to enhance the chapter's online presence and engagement.",
+            linkedin: "https://www.linkedin.com/in/diya-badri-anand/",
+            image: "images/chapters/london/diya_badri_anand.png"
+        },
+        {
+            name: "Hasan Ajaz",
             title: "Events Coordinator",
-            description: "Plans and coordinates online talks and workshops, managing speakers and timelines.",
+            description: "Hasan is a Year 12 student studying Design Technology, Economics and Psychology at A-Level, with a strong interest in Architecture. He is passionate about contributing to projects to have a positive impact, and Events Coordinator, he is responsible for planning and coordinating the SSS London Events, managing objectives and timelines to ensure success.",
             linkedin: "",
-            image: "images/chapters/london/events-coordinator.svg"
+            image: "images/chapters/london/hasan_ajaz.png"
         },
         {
-            name: "",
+            name: "Ruby Ramasamy",
+            title: "Events Coordinator",
+            description: "Ruby is currently a Year 12 studying A-Level Maths, Further Maths, Physics and History, and has an interesting in going to new places and exploring. As Events Coordinator for SSS London, she is responsible for planning and coordinating events, managing objectives and timelines to keep things going.",
+            linkedin: "https://www.linkedin.com/in/ruby-ramasamy-784b3939b/",
+            image: "images/chapters/london/ruby_ramasamy.jpg"
+        },
+        {
+            name: "Aaliya Imran",
             title: "Partnerships Coordinator",
-            description: "Builds partnerships with organizations and mentors and maintains ongoing collaborations.",
-            linkedin: "",
-            image: "images/chapters/london/partnerships-coordinator.svg"
+            description: "Aaliya is currently in Year 12 studying A-Level Maths, Economics, Politics, and History, with an aspiration to study Law in the future. As Partnerships Coordinator for SSS London, she is responsible for building and maintaining relationships with external organizations, identifying potential partners, and collaborating to create opportunities for the chapter.",
+            linkedin: "https://www.linkedin.com/in/aaliya-imran/",
+            image: "images/chapters/london/aaliya_imran.jpeg"
         },
-        {
-            name: "",
-            title: "Graphics Designer",
-            description: "Creates event graphics, templates, and brand assets for London Chapter communications.",
-            linkedin: "",
-            image: "images/chapters/london/graphics-designer.svg"
-        }
+        
     ]
 };

@@ -54,7 +54,7 @@
         }
 
         .sectionInner {
-            max-width: 1100px;
+            max-width: 1300px;
             margin: 0 auto;
             padding-left: 18px;
             padding-right: 18px;
@@ -67,23 +67,124 @@
             box-sizing: border-box;
         }
 
+        /* --- Members: 2-per-row horizontal cards (image left, text right) --- */
         .memberGrid {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 18px;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 28px 24px;
             margin-top: 22px;
-            justify-content: center;
-            align-items: stretch;
+            align-items: start;
+            justify-items: stretch;
         }
 
-        /* Each member card is an individual object in the wrap layout */
-        .memberGrid .memberCard {
-            flex: 0 1 250px;
+        /* On narrow screens use a single column */
+        @media screen and (max-width: 900px) {
+            .memberGrid {
+                grid-template-columns: 1fr;
+            }
         }
 
-        .pageSectionContent.projectsContainer {
+        /* Card shell: horizontal layout with left image and right content */
+        .memberCard {
+            display: flex;
+            flex-direction: row;
+            /* horizontal */
+            align-items: center;
+            gap: 18px;
+            background: #f8e8dd;
+            border-radius: 20px;
+            box-shadow: 0 8px 22px rgba(59, 39, 29, 0.08);
+            padding: 18px;
             width: 100%;
+            height: 275px;
             box-sizing: border-box;
+            position: relative;
+            border: 1px solid rgba(59, 39, 29, 0.06);
+            transition: transform 160ms ease, box-shadow 160ms ease;
+            min-height: 140px;
+        }
+
+        .memberCard:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 18px 40px rgba(59, 39, 29, 0.12);
+        }
+
+        /* Member image: left fixed size */
+        .memberImg {
+            width: 165px;
+            height: 165px;
+            flex-shrink: 0;
+            object-fit: cover;
+            border-radius: 25px;
+            box-shadow: 0 6px 18px rgba(59, 39, 29, 0.06);
+            background: #f3f6fa;
+        }
+
+        /* Content column (right) */
+        .memberContent {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+            min-width: 0;
+        }
+
+        .memberMeta {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+            align-items: flex-start;
+        }
+
+        .memberName {
+            font-weight: 900;
+            font-size: 18px;
+            color: var(--vDark);
+        }
+
+        .memberRole {
+            font-weight: 700;
+            font-size: 13px;
+            color: var(--mid);
+        }
+
+        .memberDesc {
+            margin-top: 8px;
+            font-size: 14px;
+            color: var(--dark);
+            line-height: 1.45;
+        }
+
+        /* LinkedIn icon positioned top-right of the card */
+        .cardLinkedIn {
+            position: absolute;
+            top: 12px;
+            right: 12px;
+            width: 44px;
+            height: 44px;
+            border-radius: 999px;
+            display: grid;
+            place-items: center;
+            text-decoration: none;
+            background: #0A66C2;
+            border: 1px solid rgba(0, 0, 0, 0.06);
+            color: #fff;
+            z-index: 3;
+            transition: transform 150ms ease, filter 150ms ease;
+        }
+
+        .cardLinkedIn:hover {
+            transform: translateY(-1px);
+            filter: brightness(0.95);
+        }
+
+        .cardLinkedIn i {
+            font-size: 20px;
+        }
+
+        .projectsContainer {
+            margin-left: 0;
+            margin-top: 0;
         }
 
         .projects {
@@ -170,7 +271,7 @@
             color: var(--dark);
             line-height: 1.55;
             margin-bottom: 0;
-            max-width: 56ch;
+            max-width: 95%;
         }
 
         .cardLinkedIn {
@@ -196,82 +297,6 @@
 
         .cardLinkedIn i {
             font-size: 22px;
-        }
-
-        .memberGrid {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 18px;
-            margin-top: 22px;
-            justify-content: center;
-            align-items: stretch;
-        }
-
-        /* Each member card is an individual object in the wrap layout */
-        .memberGrid .memberCard {
-            flex: 0 1 250px;
-        }
-
-        .memberCard {
-            background: rgba(255, 255, 255, 0.55);
-            border-radius: 22px;
-            box-shadow: 0 6px 18px rgba(59, 39, 29, 0.06);
-            padding: 14px;
-            display: grid;
-            grid-template-columns: 1fr;
-            grid-template-rows: auto auto auto 1fr auto;
-            gap: 10px;
-            border: 1px solid rgba(59, 39, 29, 0.08);
-            backdrop-filter: blur(10px);
-            position: relative;
-
-            /* Cap card width so member image cards don't get too wide */
-            max-width: 250px;
-            width: 100%;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .memberLeft {
-            display: grid;
-            gap: 8px;
-        }
-
-        .memberMeta {
-            display: grid;
-            gap: 4px;
-        }
-
-        .memberImg {
-            width: 100%;
-            height: auto;
-            border-radius: 18px;
-            object-fit: contain;
-            background: var(--midLight);
-
-            /* Extra safety: don't allow the image itself to exceed the card cap */
-            max-width: 250px;
-        }
-
-        .memberName {
-            font-weight: 900;
-            color: var(--vDark);
-            font-size: 16px;
-            line-height: 1.2;
-            letter-spacing: -0.2px;
-        }
-
-        .memberRole {
-            font-size: 13px;
-            font-weight: 900;
-            color: var(--mid);
-            margin-top: -6px;
-        }
-
-        .memberDesc {
-            font-size: 14px;
-            color: var(--dark);
-            line-height: 1.45;
         }
 
         .projectsContainer {
@@ -371,41 +396,34 @@
             }
 
             .pageSection {
-                padding-top: 44px;
+                padding-top: 40px;
                 padding-bottom: 16px;
             }
 
             .pageSection.firstSection {
-                padding-top: 34px;
+                padding-top: 30px;
             }
 
             .pageSection.midSection {
-                padding-top: 35px;
-                padding-bottom: 34px;
+                padding-top: 22px;
+                padding-bottom: 18px;
             }
 
+            /* Leaders adjustments (kept compact) */
             .leadersGrid {
-                margin-bottom: 34px;
-                gap: 16px;
+                margin-bottom: 28px;
+                gap: 14px;
             }
 
             .leaderCard {
                 grid-template-columns: 1fr;
-                padding: 16px;
-                gap: 12px;
-                padding-top: 54px;
-                border-radius: 22px;
+                padding: 14px;
+                gap: 10px;
             }
 
             .leaderImg {
-                width: 100%;
-                max-width: 180px;
-                height: auto;
-                max-height: 220px;
-                border-radius: 16px;
-                margin-left: auto;
-                margin-right: auto;
-                object-fit: contain;
+                max-width: 160px;
+                border-radius: 14px;
             }
 
             .leaderName {
@@ -420,71 +438,95 @@
                 font-size: 14px;
             }
 
+            /* LinkedIn sizing on mobile */
             .cardLinkedIn {
                 width: 42px;
                 height: 42px;
-                top: 12px;
-                right: 12px;
-                z-index: 2;
+                top: 10px;
+                right: 10px;
             }
 
             .cardLinkedIn i {
-                font-size: 19px;
-            }
-
-            .memberCard {
-                grid-template-columns: 130px 1fr;
-                grid-template-rows: auto;
-                align-items: start;
-                gap: 14px;
-                padding: 14px;
-            }
-
-            .memberLeft {
-                display: grid;
-                gap: 10px;
-            }
-
-            .memberMeta {
-                gap: 4px;
-            }
-
-            .memberImg {
-                width: 130px;
-                height: auto;
-                border-radius: 14px;
-            }
-
-            .memberRole {
-                margin-top: 0;
-            }
-
-            .memberDesc {
-                margin-top: 0;
-            }
-
-            .projectImage {
-                width: 140px;
-                height: auto;
-            }
-
-            .projectTitle {
                 font-size: 18px;
             }
 
-            .projectDescription,
-            .projectDate,
-            .projectLocation {
-                font-size: 14px;
-            }
-
-            /* On mobile, member cards can be wider */
-            .memberGrid .memberCard {
-                flex-basis: 320px;
-            }
-
+            /* MEMBER CARDS: stack vertically and scale down */
             .memberCard {
-                max-width: 340px;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+                gap: 10px;
+                padding: 12px;
+                height: auto;
+                /* allow natural height on mobile */
+                min-height: 0;
+            }
+
+            /* Smaller, circular image on mobile */
+            .memberImg {
+                width: 120px;
+                height: 120px;
+                border-radius: 50%;
+                margin-bottom: 6px;
+            }
+
+            .memberContent {
+                align-items: center;
+                width: 100%;
+            }
+
+            .memberMeta {
+                align-items: center;
+                gap: 6px;
+            }
+
+            .memberName {
+                font-size: 16px;
+            }
+
+            .memberRole {
+                font-size: 13px;
+            }
+
+            .memberDesc {
+                font-size: 14px;
+                line-height: 1.4;
+                max-height: none;
+                overflow: visible;
+                text-align: center;
+                margin-top: 6px;
+            }
+
+            /* Make grid single-column and tighten gaps */
+            .memberGrid {
+                grid-template-columns: 1fr;
+                gap: 16px 12px;
+            }
+        }
+
+        /* Very small screens: further reduce sizes */
+        @media screen and (max-width: 420px) {
+            .memberImg {
+                width: 120px;
+                height: 120px;
+            }
+
+            .memberName {
+                font-size: 15px;
+            }
+
+            .memberRole {
+                font-size: 12px;
+            }
+
+            .memberDesc {
+                font-size: 13px;
+            }
+
+            .pageSection.midSection {
+                padding-top: 14px;
+                padding-bottom: 12px;
             }
         }
     </style>
@@ -524,14 +566,15 @@
         <div class="sectionInner">
             <div class="chapterHero">
                 <div>
-                    <div class="chapterHeroTitle" data-aos="fade-up">London</div>
+                    <div class="chapterHeroTitle" data-aos="fade-up">SSS London</div>
                     <div class="chapterHeroSubtitle" data-aos="fade-up"> The Scholarly Service Society, London
-                        Chapter was the first international chapter of the SSS. We organise talks and events in order
-                        to provide opportunities for young people, such as webinars with University Students and
-                        current Professionals. In 2025, we organised the <a href = "https://scholarlyservicesociety.org/comps/stemcomp.html" target = "_black">'Futures in
+                        Chapter was the first international chapter of the SSS. We organise talks and events with the
+                        goal of creating opportunities for young people, such as webinars and panels with University
+                        Students and
+                        Professionals. In 2025, we organised the <a href = "https://scholarlyservicesociety.org/comps/stemcomp.html" target = "_blank">'Futures in
                             STEM'
                             Competition</a> sponsored by
-                        Leaf Courses, creating a platform for students to explore STEM and address global challenges,
+                        <a href = "https://leaf.courses/" target = "_blank">Leaf Courses</a>, creating a platform for students to explore STEM and address global challenges,
                         reaching 100+ students and securing nearly 40 innovative project submissions.</div>
                 </div>
                 <div class="leadersGrid" id="leadersGrid"></div>
@@ -543,7 +586,9 @@
         <div class="sectionInner">
             <div class="pageSectionTitle">Team</div>
             <div class="pageSectionContentText">Meet the people behind the London Chapter.</div>
-            <div class="memberGrid" id="memberGrid"></div>
+            <div class="memberGrid" id="memberGrid">
+
+            </div>
         </div>
     </div>
 
@@ -634,54 +679,52 @@
             var card = document.createElement('div');
             card.className = 'memberCard';
 
-            if (m.linkedin) {
-                var li = document.createElement('a');
-                li.className = 'cardLinkedIn';
-                li.href = m.linkedin;
-                li.target = '_blank';
-                li.rel = 'noopener';
-                li.setAttribute('aria-label', 'LinkedIn');
-                li.innerHTML = '<i class="fa-brands fa-linkedin-in"></i>';
-                card.appendChild(li);
-            }
+            // LinkedIn icon (top-right) - use member link or fallback
+            var linkedinUrl = (m && m.linkedin && m.linkedin.trim()) ? m.linkedin : 'https://www.linkedin.com/in/ishbir-singh/';
+            var li = document.createElement('a');
+            li.className = 'cardLinkedIn';
+            li.href = linkedinUrl;
+            li.target = '_blank';
+            li.rel = 'noopener';
+            li.setAttribute('aria-label', 'LinkedIn');
+            li.innerHTML = '<i class="fa-brands fa-linkedin-in"></i>';
+            card.appendChild(li);
 
-            var left = document.createElement('div');
-            left.className = 'memberLeft';
-
+            // Image on the left
             var img = document.createElement('img');
             img.className = 'memberImg';
-            img.src = '../' + m.image;
-            img.alt = safeText(m.name || m.title, 'Member');
+            img.src = (m && m.image) ? ('../' + m.image) : '../images/SSS Logo.JPG';
+            img.alt = safeText((m && m.name) ? m.name : (m && m.title) ? m.title : 'Member');
             img.loading = 'lazy';
+
+            // Content column on the right
+            var content = document.createElement('div');
+            content.className = 'memberContent';
 
             var meta = document.createElement('div');
             meta.className = 'memberMeta';
 
-            var name = document.createElement(m.linkedin ? 'a' : 'div');
-            name.className = m.linkedin ? 'memberName memberNameLink' : 'memberName';
-            if (m.linkedin) {
-                name.href = m.linkedin;
-                name.target = '_blank';
-                name.rel = 'noopener';
-            }
-            name.textContent = safeText(m.name, m.title);
+            var nameEl = document.createElement((m && m.linkedin) ? 'div' : 'div');
+            nameEl.className = (m && m.linkedin) ? 'memberName' : 'memberName';
+            nameEl.textContent = safeText((m && m.name) ? m.name : '', (m && m.title) ? m.title : '');
 
             var role = document.createElement('div');
             role.className = 'memberRole';
-            role.textContent = safeText(m.title, '');
+            role.textContent = safeText((m && m.title) ? m.title : '');
 
-            meta.appendChild(name);
+            meta.appendChild(nameEl);
             meta.appendChild(role);
-
-            left.appendChild(img);
-            left.appendChild(meta);
 
             var desc = document.createElement('div');
             desc.className = 'memberDesc';
-            desc.textContent = safeText(m.description, '');
+            desc.textContent = safeText((m && m.description) ? m.description : '');
 
-            card.appendChild(left);
-            card.appendChild(desc);
+            content.appendChild(meta);
+            content.appendChild(desc);
+
+            // assemble: image left, content right
+            card.appendChild(img);
+            card.appendChild(content);
 
             return card;
         }
@@ -743,7 +786,9 @@
 
             if (team && team.members && team.members.length) {
                 var memberGrid = document.getElementById('memberGrid');
-                for (var j = 0; j < team.members.length; j++) {
+                var maxCards = 6;
+                var count = Math.min(team.members.length, maxCards);
+                for (var j = 0; j < count; j++) {
                     memberGrid.appendChild(createMemberCard(team.members[j]));
                 }
             }
@@ -778,6 +823,5 @@
 </body>
 
 </html>
-
 
 
