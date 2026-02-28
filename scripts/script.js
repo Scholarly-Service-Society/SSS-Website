@@ -373,7 +373,7 @@ window.londonChapterTeam = {
         {
             name: "Ruby Ramasamy",
             title: "Events Coordinator",
-            description: "Ruby is currently a Year 12 studying A-Level Maths, Further Maths, Physics and History, and has an interesting in going to new places and exploring. As Events Coordinator for SSS London, she is responsible for planning and coordinating events, managing objectives and timelines to keep things going.",
+            description: "Ruby is currently a Year 12 studying A-Level Maths, Further Maths, Physics and History, and has an interest in going to new places and exploring. As Events Coordinator for SSS London, she is responsible for planning and coordinating events, managing objectives and timelines to keep things going.",
             linkedin: "https://www.linkedin.com/in/ruby-ramasamy-784b3939b/",
             image: "images/chapters/london/ruby_ramasamy.jpg"
         },
