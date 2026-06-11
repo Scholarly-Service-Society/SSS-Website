@@ -258,6 +258,13 @@ let projects = {
             date: "6th September to 25th October, 2025",
             location: "Online",
             image: "images/projects/london/londonStemComp.png"
+        },
+        p6: {
+            title: "UCAS Uncovered Panel",
+            description: "Hosted an online Q&A panel by current Oxford, Cambridge, and Imperial offer holders on the UCAS and UK University admissions processes, engaging over 100 participants and answering many questions on a variety of topics.",
+            date: "April 27th, 2026",
+            location: "Online - Google Meet",
+            image: "images/projects/london/londonProject6.png"
         }
     },
     coh: {
