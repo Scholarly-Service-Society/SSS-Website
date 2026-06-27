@@ -349,13 +349,13 @@ window.londonChapterTeam = {
         }
     ],
     members: [
-        {
-            name: "Alesia Caraba",
-            title: "Outreach Manager",
-            description: "Alesia is currently in Year 12 studying Economics, Politics, and Business, looking to go into marketing in the future, and is also active with the cadets. As an outreach maneger for SSS London, she will help increase awareness of the chapter and its events, as well as help connect students with opportunities to get involved.",
-            linkedin: "https://www.linkedin.com/in/alesia-stephanie-caraba-b56350382/",
-            image: "images/chapters/london/alesia_caraba.jpg"
-        },
+        // {
+        //     name: "Alesia Caraba",
+        //     title: "Outreach Manager",
+        //     description: "Alesia is currently in Year 12 studying Economics, Politics, and Business, looking to go into marketing in the future, and is also active with the cadets. As an outreach maneger for SSS London, she will help increase awareness of the chapter and its events, as well as help connect students with opportunities to get involved.",
+        //     linkedin: "https://www.linkedin.com/in/alesia-stephanie-caraba-b56350382/",
+        //     image: "images/chapters/london/alesia_caraba.jpg"
+        // },
         {
             name: "Ronit Jaisinghani",
             title: "Outreach Manager",
