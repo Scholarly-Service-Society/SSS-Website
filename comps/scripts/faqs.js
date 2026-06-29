@@ -1,4 +1,4 @@
-const faqs = [
+let faqs = [
     {
         question: "Who can participate?",
         answer: "The competition is open to students aged 14–19"

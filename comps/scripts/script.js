@@ -1,7 +1,13 @@
 document.addEventListener('DOMContentLoaded', function () {
-    const judgesRow = document.querySelector('.judgesRow');
-    const leftBtn = document.querySelector('.judges-scroll-left');
-    const rightBtn = document.querySelector('.judges-scroll-right');
+    const countdownTarget = new Date('2026-08-15T19:00:00Z'); // 8:00 PM BST = 7:00 PM UTC
+
+    // Scope to the judges section: the 2025-results carousel reuses the
+    // .judges-scroll-left/right classes, so a page-wide querySelector can grab
+    // the wrong buttons depending on which section comes first in the DOM.
+    const judgesSection = document.querySelector('.judges-scroll-section');
+    const judgesRow = judgesSection ? judgesSection.querySelector('.judgesRow') : null;
+    const leftBtn = judgesSection ? judgesSection.querySelector('.judges-scroll-left') : null;
+    const rightBtn = judgesSection ? judgesSection.querySelector('.judges-scroll-right') : null;
     if (judgesRow && leftBtn && rightBtn) {
         leftBtn.addEventListener('click', function () {
             judgesRow.scrollBy({
@@ -21,23 +27,23 @@ document.addEventListener('DOMContentLoaded', function () {
     const slider = document.querySelector('.slider');
 
     let gbpAmounts = {
-        'prize-amount': "275",
-        'prize-1st': "75",
-        'prize-2nd': "50",
-        'prize-3rd': "40",
-        'prize-4th': "35",
-        'prize-5th': "25",
-        'prize-6th': "10",
+        'prize-amount': "500",
+        'prize-1st': "150",
+        'prize-2nd': "100",
+        'prize-3rd': "75",
+        'prize-4th': "60",
+        'prize-5th': "40",
+        'prize-6th': "15",
     }
 
     let usdAmounts = {
-        'prize-amount': "375",
-        'prize-1st': "100",
-        'prize-2nd': "65",
-        'prize-3rd': "55",
-        'prize-4th': "45",
-        'prize-5th': "35",
-        'prize-6th': "15",
+        'prize-amount': "650",
+        'prize-1st': "200",
+        'prize-2nd': "130",
+        'prize-3rd': "100",
+        'prize-4th': "75",
+        'prize-5th': "45",
+        'prize-6th': "20",
     }
 
     function setCurrency(symbol) {
@@ -57,7 +63,6 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     function initializeCurrency() {
-        const browserLanguage = navigator.language || navigator.userLanguage;
         // const isEnglish = browserLanguage.startsWith('en');
         // if (isEnglish) {
         //     slider.classList.remove('active');
@@ -77,6 +82,50 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     initializeCurrency();
+
+    function pad(value) {
+        return String(value).padStart(2, '0');
+    }
+
+    function updateCountdown() {
+        const daysEl = document.getElementById('countdown-days');
+        const hoursEl = document.getElementById('countdown-hours');
+        const minutesEl = document.getElementById('countdown-minutes');
+        const secondsEl = document.getElementById('countdown-seconds');
+
+        if (!daysEl || !hoursEl || !minutesEl || !secondsEl) {
+            return;
+        }
+
+        const now = new Date();
+        const diff = countdownTarget.getTime() - now.getTime();
+
+        if (diff <= 0) {
+            daysEl.textContent = '0';
+            hoursEl.textContent = '00';
+            minutesEl.textContent = '00';
+            secondsEl.textContent = '00';
+            const countdownPanel = document.querySelector('.countdown-note');
+            if (countdownPanel) {
+                countdownPanel.textContent = 'Submissions are now closed.';
+            }
+            return;
+        }
+
+        const totalSeconds = Math.floor(diff / 1000);
+        const days = Math.floor(totalSeconds / 86400);
+        const hours = Math.floor((totalSeconds % 86400) / 3600);
+        const minutes = Math.floor((totalSeconds % 3600) / 60);
+        const seconds = totalSeconds % 60;
+
+        daysEl.textContent = String(days);
+        hoursEl.textContent = pad(hours);
+        minutesEl.textContent = pad(minutes);
+        secondsEl.textContent = pad(seconds);
+    }
+
+    updateCountdown();
+    setInterval(updateCountdown, 1000);
 
     window.setMainTopBubbleAmount = function (amount, prizeText) {
         let bubbleAmount = document.querySelector('.mainTop-bubble-left .mainTop-bubble-amount');
