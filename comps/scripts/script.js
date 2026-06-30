@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', function () {
-    const countdownTarget = new Date('2026-08-15T19:00:00Z'); // 8:00 PM BST = 7:00 PM UTC
+    const countdownTarget = new Date('2026-07-15T07:00:00Z'); // 8:00 PM BST = 7:00 PM UTC
 
     // Scope to the judges section: the 2025-results carousel reuses the
     // .judges-scroll-left/right classes, so a page-wide querySelector can grab
@@ -27,23 +27,23 @@ document.addEventListener('DOMContentLoaded', function () {
     const slider = document.querySelector('.slider');
 
     let gbpAmounts = {
-        'prize-amount': "500",
-        'prize-1st': "150",
-        'prize-2nd': "100",
-        'prize-3rd': "75",
-        'prize-4th': "60",
-        'prize-5th': "40",
-        'prize-6th': "15",
+        'prize-amount': "375",
+        'prize-1st': "100",
+        'prize-2nd': "80",
+        'prize-3rd': "65",
+        'prize-4th': "45",
+        'prize-5th': "35",
+        'prize-6th': "10",
     }
 
     let usdAmounts = {
-        'prize-amount': "650",
-        'prize-1st': "200",
-        'prize-2nd': "130",
-        'prize-3rd': "100",
-        'prize-4th': "75",
+        'prize-amount': "500",
+        'prize-1st': "130",
+        'prize-2nd': "105",
+        'prize-3rd': "85",
+        'prize-4th': "60",
         'prize-5th': "45",
-        'prize-6th': "20",
+        'prize-6th': "15",
     }
 
     function setCurrency(symbol) {

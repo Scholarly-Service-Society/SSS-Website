@@ -1584,6 +1584,11 @@ footer {
 @media (max-width:500px){ .icon-list li{max-width:140px;} }
 @media (prefers-reduced-motion:reduce){ .icon-circle{transition:none;} }
 
+@media (max-width: 900px) {
+    .countdown-panel {
+        display: none;
+    }
+}
 .countdown-panel {
     z-index: 100000000000000000000000;
 }
