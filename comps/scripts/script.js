@@ -1,14 +1,30 @@
+const judgesSection = document.querySelector('.judges-scroll-section');
+const judgesRow = judgesSection ? judgesSection.querySelector('.judgesRow') : null;
+const leftBtn = judgesSection ? judgesSection.querySelector('.judges-scroll-left') : null;
+const rightBtn = judgesSection ? judgesSection.querySelector('.judges-scroll-right') : null;
+if (true) {
+    leftBtn.addEventListener('click', function () {
+        judgesRow.scrollBy({
+            left: -320,
+            behavior: 'smooth'
+        });
+    });
+    rightBtn.addEventListener('click', function () {
+        judgesRow.scrollBy({
+            left: 320,
+            behavior: 'smooth'
+        });
+    });
+}
+
+
 document.addEventListener('DOMContentLoaded', function () {
     const countdownTarget = new Date('2026-07-15T07:00:00Z'); // 8:00 PM BST = 7:00 PM UTC
 
     // Scope to the judges section: the 2025-results carousel reuses the
     // .judges-scroll-left/right classes, so a page-wide querySelector can grab
-    // the wrong buttons depending on which section comes first in the DOM.
-    const judgesSection = document.querySelector('.judges-scroll-section');
-    const judgesRow = judgesSection ? judgesSection.querySelector('.judgesRow') : null;
-    const leftBtn = judgesSection ? judgesSection.querySelector('.judges-scroll-left') : null;
-    const rightBtn = judgesSection ? judgesSection.querySelector('.judges-scroll-right') : null;
-    if (judgesRow && leftBtn && rightBtn) {
+    // the wrong buttons depending on which section comes first in the DOM
+    if (true) {
         leftBtn.addEventListener('click', function () {
             judgesRow.scrollBy({
                 left: -320,

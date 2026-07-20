@@ -1,20 +1,20 @@
 let judgesDB = {
-    judge1: {
-        name: "Frank Armenante",
-        occupation: "Director of Field Systems and Projects at Novo Nordisk",
-        disciplines: ["Pharmaceutical", "Medicine"],
-        mainImg: "images/judges/people/frank_armenante.png",
-        secondaryImg: "images/judges/org/novo_nordisk.png",
-        linkedin: "https://www.linkedin.com/in/frank-armenante-01079a/"
-    },
-    judge2: {
-        name: "Lasen Wanni Arachchige",
-        occupation: "Aeronautical Engineering MEng Graduate from Imperial College London",
-        disciplines: ["Engineering", "Aerospace"],
-        mainImg: "images/judges/people/lasen_wanni_arachchige.jpeg",
-        secondaryImg: "images/judges/org/imperial.svg",
-        linkedin: "https://www.linkedin.com/in/lasen/"
-    },
+    // judge1: {
+    //     name: "Frank Armenante",
+    //     occupation: "Director of Field Systems and Projects at Novo Nordisk",
+    //     disciplines: ["Pharmaceutical", "Medicine"],
+    //     mainImg: "images/judges/people/frank_armenante.png",
+    //     secondaryImg: "images/judges/org/novo_nordisk.png",
+    //     linkedin: "https://www.linkedin.com/in/frank-armenante-01079a/"
+    // },
+    // judge2: {
+    //     name: "Lasen Wanni Arachchige",
+    //     occupation: "Aeronautical Engineering MEng Graduate from Imperial College London",
+    //     disciplines: ["Engineering", "Aerospace"],
+    //     mainImg: "images/judges/people/lasen_wanni_arachchige.jpeg",
+    //     secondaryImg: "images/judges/org/imperial.svg",
+    //     linkedin: "https://www.linkedin.com/in/lasen/"
+    // },
     judge4: {
         name: "Jonah Boucher",
         occupation: "Managing Director of <a href = 'https://www.leaf.courses/' target = '_blank'>Leaf Courses</a> and Maths Specialist",
@@ -39,54 +39,70 @@ let judgesDB = {
         secondaryImg: "images/judges/org/soton_iet.png",
         linkedin: "https://www.linkedin.com/in/ivanling92/"
     },
-    judge7: {
-        name: "Rohan Gahir",
-        occupation: "1st Year Discrete Mathematics Undergraduate at the University of Warwick",
-        disciplines: ["Mathematics", "Computer Science"],
-        mainImg: "images/judges/people/rohan_gahir.jpg",
-        secondaryImg: "images/judges/org/warwick.png",
-        linkedin: "https://www.linkedin.com/in/rohan-gahir-b15aaa2ab/"
-    },
-    judge8: {
-        name: "Timothee Dusserre Cordonnier",
-        occupation: "1st Year Natural Sciences Undergraduate at the University of Cambridge",
-        disciplines: ["Sciences", "Physics", "Chemistry"],
-        mainImg: "images/judges/people/timothee_cordonnier.png",
-        secondaryImg: "images/judges/org/cambridge.jpg",
-        linkedin: "https://www.linkedin.com/in/timothee-dusserre-cordonnier-106a512ba/"
-    },
+    // judge7: {
+    //     name: "Rohan Gahir",
+    //     occupation: "1st Year Discrete Mathematics Undergraduate at the University of Warwick",
+    //     disciplines: ["Mathematics", "Computer Science"],
+    //     mainImg: "images/judges/people/rohan_gahir.jpg",
+    //     secondaryImg: "images/judges/org/warwick.png",
+    //     linkedin: "https://www.linkedin.com/in/rohan-gahir-b15aaa2ab/"
+    // },
+    // judge8: {
+    //     name: "Timothee Dusserre Cordonnier",
+    //     occupation: "1st Year Natural Sciences Undergraduate at the University of Cambridge",
+    //     disciplines: ["Sciences", "Physics", "Chemistry"],
+    //     mainImg: "images/judges/people/timothee_cordonnier.png",
+    //     secondaryImg: "images/judges/org/cambridge.jpg",
+    //     linkedin: "https://www.linkedin.com/in/timothee-dusserre-cordonnier-106a512ba/"
+    // },
+    // judge9: {
+    //     name: "Karthik Sadanand",
+    //     occupation: "5th Year Medical Student at Emmanuel College, University of Cambridge",
+    //     disciplines: ["Medicine", "Biology", "Chemistry"],
+    //     mainImg: "images/judges/people/karthik_sadanand.jpg",
+    //     secondaryImg: "images/judges/org/cambridge.jpg",
+    //     linkedin: "https://www.linkedin.com/in/karthik-sadanand-241954211/"
+    // },
+    // judge10: {
+    //     name: "Manav Mahesh",
+    //     occupation: "2nd Year Medical Student at the University of Cambridge",
+    //     disciplines: ["Medicine", "Biology", "Chemistry"],
+    //     mainImg: "images/judges/people/manav_mahesh.jpg",
+    //     secondaryImg: "images/judges/org/cambridge.jpg",
+    //     linkedin: "https://www.linkedin.com/in/manav-mahesh-116735276/"
+    // },
+    // judge11: {
+    //     name: "Djeya 'Jay' Kaliaraju",
+    //     occupation: "Clinincal Lead Physiotherapist at the NHS & Pulmonary Rehabilitation Lead",
+    //     disciplines: ["Medicine", "Physiotherapy"],
+    //     mainImg: "images/judges/people/jay_kaliaraju.jpg",
+    //     secondaryImg: "images/judges/org/nhs.png",
+    //     linkedin: "https://www.linkedin.com/in/djeya-kaliaraju-msc-mcsp-41772020b"
+    // },
+    // judge13: {
+    //     name: "Agastya Kumar",
+    //     occupation: "1st Year Natural Sciences Undergraduate at the University of Cambridge",
+    //     disciplines: ["Sciences", "Mathematics", "Physics"],
+    //     mainImg: "images/judges/people/agastya_kumar.jpeg",
+    //     secondaryImg: "images/judges/org/cambridge.jpg",
+    //     linkedin: "https://www.linkedin.com/in/agastya-kumar-2514b2290/"
+    // },
     judge9: {
-        name: "Karthik Sadanand",
-        occupation: "5th Year Medical Student at Emmanuel College, University of Cambridge",
+        name: "Dr. Harshvir Singh Grewal",
+        occupation: "Medical Doctor, Associate Clinical Supervisor at School of Clinical Medicine, University of Cambridge",
         disciplines: ["Medicine", "Biology", "Chemistry"],
-        mainImg: "images/judges/people/karthik_sadanand.jpg",
+        mainImg: "images/judges/people/harshvir_grewal.png",
         secondaryImg: "images/judges/org/cambridge.jpg",
-        linkedin: "https://www.linkedin.com/in/karthik-sadanand-241954211/"
+        linkedin: "https://www.linkedin.com/in/harshvir-grewal/"
     },
     judge10: {
-        name: "Manav Mahesh",
-        occupation: "2nd Year Medical Student at the University of Cambridge",
-        disciplines: ["Medicine", "Biology", "Chemistry"],
-        mainImg: "images/judges/people/manav_mahesh.jpg",
-        secondaryImg: "images/judges/org/cambridge.jpg",
-        linkedin: "https://www.linkedin.com/in/manav-mahesh-116735276/"
+        name: "Dr. Aled Williams",
+        occupation: "Teaching Fellow and Lecturer at Royal Holloway University of London",
+        disciplines: ["Maths", "Computer Science"],
+        mainImg: "images/judges/people/aled_williams.png",
+        secondaryImg: "images/judges/org/royal_holloway.png",
+        linkedin: "https://www.linkedin.com/in/aledwilliamsmaths/"
     },
-    judge11: {
-        name: "Djeya 'Jay' Kaliaraju",
-        occupation: "Clinincal Lead Physiotherapist at the NHS & Pulmonary Rehabilitation Lead",
-        disciplines: ["Medicine", "Physiotherapy"],
-        mainImg: "images/judges/people/jay_kaliaraju.jpg",
-        secondaryImg: "images/judges/org/nhs.png",
-        linkedin: "https://www.linkedin.com/in/djeya-kaliaraju-msc-mcsp-41772020b"
-    },
-    judge13: {
-        name: "Agastya Kumar",
-        occupation: "1st Year Natural Sciences Undergraduate at the University of Cambridge",
-        disciplines: ["Sciences", "Mathematics", "Physics"],
-        mainImg: "images/judges/people/agastya_kumar.jpeg",
-        secondaryImg: "images/judges/org/cambridge.jpg",
-        linkedin: "https://www.linkedin.com/in/agastya-kumar-2514b2290/"
-    }
 }
 
 function renderJudges() {
