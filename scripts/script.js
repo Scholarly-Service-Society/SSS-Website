@@ -75,6 +75,13 @@ let chapters = {
         description: "The Scholarly Service Society - Edison, New Jersey Chapter is the 11th established SSS Chapter and now the 5th Chapter from New Jersey, allowing the organisation to continue fostering cleaner, safer, and more educated communities through the power volunteerism, and deepening the SSS impact in New Jersey.",
         link: "TBD",
         date: "June 2025",
+    },
+    brnj: {
+        name: "Basking Ridge, New Jersey, USA",
+        founder: "Ritvik Peddi",
+        description: "The Scholarly Service Society - Basking Ridge, New Jersey Chapter is the 12th established SSS Chapter and now the 6th Chapter from New Jersey. Be on the lookout for updates!",
+        link: "TBD",
+        date: "July 2026"
     }
 }
 
@@ -317,6 +324,12 @@ window.projects = projects;
 window.chapters = chapters;
 
 let founders = {
+    am: {
+        name: "Amrit Mann",
+        role: "Current Executive Director",
+        description: "Hi, my name is Amrit Mann. I am a senior at Hightstown High School with interests in finance, economics, and community service. As Executive Director of the Scholarly Service Society, I hope to expand meaningful volunteer opportunities and help students create a lasting impact.",
+        image: "images/founders/Amrit Mann.png"
+    },
     psv: {
         name: "Pahul Singh Virk",
         role: "Co-Founder",

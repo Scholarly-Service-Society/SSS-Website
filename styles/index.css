@@ -135,6 +135,126 @@
     font-weight: 400;
 }
 
+.section.impact {
+    height: min-content;
+    min-height: 52vh;
+    padding: 88px 96px 40px;
+    color: #f8f1e8;
+    flex-direction: column;
+    background:
+        radial-gradient(circle at top left, rgba(255, 198, 148, 0.45), transparent 34%),
+        radial-gradient(circle at bottom right, rgba(110, 63, 35, 0.85), transparent 38%),
+        linear-gradient(135deg, #1f1714 0%, #3c2417 58%, #6a4229 100%);
+    position: relative;
+    overflow: visible;
+    border-top: 1px solid rgba(255, 250, 241, 0.12);
+    border-bottom: 1px solid rgba(255, 250, 241, 0.12);
+}
+
+.section.impact::before {
+    content: "";
+    position: absolute;
+    inset: 18px;
+    border: 1px solid rgba(255, 250, 241, 0.08);
+    border-radius: 28px;
+    pointer-events: none;
+}
+
+.impactShell {
+    width: 100%;
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.impactHeader {
+    max-width: 900px;
+}
+
+.impactEyebrow {
+    font-size: 16px;
+    font-weight: 800;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: #f0b37b;
+    margin-bottom: 12px;
+}
+
+.impactTitle {
+    font-size: 38px;
+    font-weight: 800;
+    line-height: 1.05;
+    margin-bottom: 14px;
+    letter-spacing: -1px;
+    color: #fff8ef;
+}
+
+.impactSubtitle {
+    max-width: 760px;
+    font-size: 17px;
+    color: rgba(248, 241, 232, 0.85);
+}
+
+.impactCards {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px;
+    margin-top: 8px;
+}
+
+.impactCard {
+    position: relative;
+    background: rgba(255, 250, 241, 0.08);
+    border: 1px solid rgba(255, 250, 241, 0.1);
+    border-radius: 16px;
+    padding: 14px 16px 12px;
+    box-shadow: none;
+    backdrop-filter: none;
+    overflow: hidden;
+}
+
+.impactCard::after {
+    content: "";
+    position: absolute;
+    inset: auto -40px -40px auto;
+    width: 0;
+    height: 0;
+    background: transparent;
+    pointer-events: none;
+}
+
+.impactCardIcon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 999px;
+    background: transparent;
+    border: 1px solid rgba(255, 250, 241, 0.22);
+    color: rgba(248, 241, 232, 0.82);
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    margin-bottom: 8px;
+}
+
+.impactValue {
+    font-size: 34px;
+    font-weight: 800;
+    line-height: 1;
+    color: #fff8ef;
+}
+
+.impactLabel {
+    margin-top: 10px;
+    font-size: 14px;
+    color: rgba(248, 241, 232, 0.88);
+}
+
 .section.images {
     padding: 20px 80px 80px;
     color: var(--dark);
@@ -318,6 +438,51 @@
         width: 100%;
         font-size: 18px;
         line-height: 1.6;
+    }
+
+    .section.impact {
+        min-height: 0;
+        padding: 56px 18px 24px;
+    }
+
+    .section.impact::before {
+        inset: 10px;
+        border-radius: 22px;
+    }
+
+    .impactShell {
+        gap: 12px;
+    }
+
+    .impactTitle {
+        font-size: 26px;
+    }
+
+    .impactSubtitle {
+        font-size: 14px;
+    }
+
+    .impactCards {
+        grid-template-columns: 1fr;
+    }
+
+    .impactCard {
+        padding: 12px;
+        border-radius: 14px;
+    }
+
+    .impactCardIcon {
+        width: 32px;
+        height: 32px;
+        margin-bottom: 16px;
+    }
+
+    .impactValue {
+        font-size: 28px;
+    }
+
+    .impactLabel {
+        font-size: 13px;
     }
 
     .mainLeft {

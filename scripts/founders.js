@@ -26,6 +26,14 @@ window.addEventListener('load', function() {
         founderDescription.innerHTML = founders[foundersKeys[i]].description;
 
         founderLeft.append(founderSubtitle);
+
+        if (founders[foundersKeys[i]].role) {
+            let founderRole = document.createElement("div");
+            founderRole.classList.add("founderRole");
+            founderRole.innerHTML = founders[foundersKeys[i]].role;
+            founderLeft.append(founderRole);
+        }
+
         founderLeft.append(founderDescription);
 
         let founderRight = document.createElement("div");

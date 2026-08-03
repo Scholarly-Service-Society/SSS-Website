@@ -6,6 +6,15 @@
     font-weight: bold;
 }
 
+.founderRole {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--mid);
+    margin-bottom: 14px;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+}
+
 .founder {
     display: flex;
     justify-content: space-between;
@@ -47,6 +56,11 @@
 
     .founderSubtitle {
         margin-bottom: 10px;
+    }
+
+    .founderRole {
+        margin-bottom: 10px;
+        font-size: 16px;
     }
 
     .founderLeft {

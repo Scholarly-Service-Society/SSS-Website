@@ -21,8 +21,11 @@ window.addEventListener('load', function() {
 
         let chapterLeader = document.createElement("div");
         chapterLeader.classList.add("chapterSubtitle");
+        let founder = (chapter && typeof chapter.founder === 'string') ? chapter.founder.trim() : '';
         let leader = (chapter && typeof chapter.leader === 'string') ? chapter.leader.trim() : '';
-        if (leader) {
+        if (founder) {
+            chapterLeader.textContent = "Founder: " + founder;
+        } else if (leader) {
             if (leader.includes(",")) {
                 chapterLeader.textContent = "Chapter Leaders: " + leader;
             } else {
