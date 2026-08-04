@@ -139,12 +139,13 @@
     height: min-content;
     min-height: min-content;
     padding: 80px;
-    margin-bottom: 0;
+    margin-bottom: 40px;
     color: var(--vDark);
     flex-direction: column;
     background: linear-gradient(180deg, #f9f1e4 0%, #f4e2c8 100%);
     position: relative;
-    overflow: hidden;
+    overflow: visible;
+    z-index: 1;
     border-bottom: 1px solid rgba(89, 73, 60, 0.08);
 }
 
@@ -243,11 +244,10 @@
 
 .section.images {
     padding: 20px 80px 80px;
-    margin-top: 0;
     color: var(--dark);
     flex-direction: column;
     align-items: center;
-    margin-top: 0; /* remove added margin */
+    margin-top: 0;
 }
 
 .imagesTop {
@@ -409,6 +409,8 @@
         height: min-content;
         display: flex;
         flex-direction: column;
+        position: relative;
+        z-index: 0;
     }
 
     .aboutLeft {
@@ -429,7 +431,7 @@
 
     .section.impact {
         min-height: min-content;
-        padding: 36px 20px 40px;
+        padding: 24px 20px 24px;
         margin-bottom: 0;
         opacity: 1 !important;
         transform: none !important;
