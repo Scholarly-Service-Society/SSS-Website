@@ -82,6 +82,13 @@ let chapters = {
         description: "The Scholarly Service Society - Basking Ridge, New Jersey Chapter is the 12th established SSS Chapter and now the 6th Chapter from New Jersey. Be on the lookout for updates!",
         link: "TBD",
         date: "July 2026"
+    },
+    nyc: {
+        name: "New York City, New York, USA",
+        founder: "Sukhpreet Kaur",
+        description: "The Scholarly Service Society - New York City Chapter is the 13th established SSS Chapter and expands the SSS mission into New York City, connecting students with meaningful volunteer opportunities and community impact initiatives.",
+        link: "TBD",
+        date: "August 2026"
     }
 }
 
@@ -316,6 +323,9 @@ let projects = {
         
     },
     trk: {
+        
+    },
+    nyc: {
         
     }
 }
