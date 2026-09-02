@@ -41,7 +41,7 @@
         specialAwards: [
             { award: 'Best Presented', winner: 'Keiyona Weldon', abstract: 'https://pastequest.com/?0878a56d41362c79#ScF5pyU5juWZUsuT2JUWBoLk4FPEeSUwKUmN3pkFbzy', link: 'https://docs.google.com/videos/d/19Dy7IKDD0WgyfgFRCUtL5WszHMkAaV_LdXLLpiHWKvg/play?usp=sharing' },
             { award: 'Best Researched', winner: 'Cendana Madhani', abstract: 'https://pastequest.com/?421b96abd5038fd3#5TgGjeD2ZCzpha3M6FMwaSVtHLXr2YnKXKumy8RSdp6E', link: 'https://canva.link/hzq239ghgpp8mde' },
-            { award: 'Most Innovative', winner: 'Oluwadamilola Awogbile', abstract: 'https://pastequest.com/?3b8284a6796637aa#AxmywD7THTtjJcP2tT346TdWjfTbFhm6gHq6jodvBQqF', link: 'https://canva.link/2e18xtmgi3igy28' },
+            { award: 'Most Innovative', winner: 'Oluwadamilola Awogbile', abstract: 'https://pastequest.com/?3b8284a6796637aa#AxmywD7THTtjJcP2tT346TdWjfTbFhm6gHq6jodvBQqF', link: 'https://drive.google.com/drive/folders/1K1EwBhqyFaI-Gcx_2Uf0hBfSMOStlQue?usp=sharing' },
             { award: 'Most Technical', winner: 'Heymann Ng', abstract: 'https://pastequest.com/?dd7689487ae44ed6#F5cUP4WoDVKn5DWczS5yc2L76b8GRiJzRk4jozYxDvrE', link: 'https://docs.google.com/presentation/d/1P_emxQgJ1MGQdkQvdBuvjJfKSRQOnJ6K/edit?usp=drive_link&ouid=110866049858830126647&rtpof=true&sd=true' }
         ],
         honorableMentions: [
